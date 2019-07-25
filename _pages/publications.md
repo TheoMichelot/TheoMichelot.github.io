@@ -59,10 +59,6 @@ Langrock, R., <strong>Michelot, T.</strong>, Sohn, A., Kneib, T. (2015)<br />
 <a href="http://link.springer.com/article/10.1007/s00180-014-0547-5">&quot;Semiparametric stochastic volatility modelling using penalized splines&quot;</a><br />
 <em>Computational Statistics</em>, 30, pp. 517-537.
 
-{% if author.googlescholar %}
-You can also find my articles on <u><a href="{{author.googlescholar}}">my Google Scholar profile</a>.</u>
-{% endif %}
-
 {% include base_path %}
 
 {% for post in site.publications reversed %}
