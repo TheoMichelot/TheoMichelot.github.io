@@ -8,6 +8,20 @@ redirect_from:
   - /about.html
 ---
 
+## Interests
+
+Hidden Markov models, and applications in ecology
+
+Inference for stochastic differential equations
+
+Animal movement models
+
+Habitat selection models
+
+Statistical software development
+
+## Biography
+
 Since February 2019, I am a postdoctoral researcher in statistics, at the <a href="https://www.creem.st-andrews.ac.uk/">Centre for Research into Ecological and Environmental Modelling</a> (CREEM) of the University of St Andrews, UK. I am working on continuous-time models of animal movement and behaviour. <br/>
 
 Between 2016 and 2018, I did a PhD at the School of Mathematics and Statistics of the University of Sheffield, under the supervision of <a href="http://www.paul-blackwell.staff.shef.ac.uk/index.html">Paul Blackwell</a>. I worked on the integration of animal movement, space use, and habitat selection across spatio-temporal scales.<br/>
