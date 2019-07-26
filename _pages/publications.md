@@ -9,7 +9,7 @@ author_profile: true
 <a href="https://arxiv.org/abs/1810.10930">&quot;Inference in MCMC step selection models&quot; </a><br/>
 <em>arXiv</em>, arXiv:1810.10930.
 
-<strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P. (accepted)<br /> 
+<strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (accepted)<br /> 
 <a href="https://arxiv.org/abs/1810.10213">&quot;The Langevin diffusion as a continuous-time model of animal movement and habitat selection&quot; </a><br/>
 <em>Methods in Ecology and Evolution</em> <br/>
 Preprint on <em>arXiv</em>, arXiv:1810.10213.
