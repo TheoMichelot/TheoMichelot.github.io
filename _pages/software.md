@@ -16,9 +16,9 @@ We developed the R package <strong>moveHMM</strong> for the analysis of movement
               
 The R package <strong>momentuHMM</strong> extends moveHMM to more general and flexible models. Additional features include: unlimited number of data streams, inclusion of covariates on the observation distribution parameters, centres of attraction, multiple imputation to account for irregular sampling and/or measurement error, etc.<br/>
 <ul>
-	<li> On <a href="https://cran.r-project.org/package=momentuHMM">CRAN</a>.
-	<li> On <a href="https://github.com/bmcclintock/momentuHMM">Github</a>.
-	<li> Get started with <a href="https://cran.r-project.org/web/packages/momentuHMM/vignettes/momentuHMM.pdf">the vignette</a>.
+	<li> On <a href="https://cran.r-project.org/package=momentuHMM">CRAN</a>.  </li>
+	<li> On <a href="https://github.com/bmcclintock/momentuHMM">Github</a>.  </li>
+	<li> Get started with <a href="https://cran.r-project.org/web/packages/momentuHMM/vignettes/momentuHMM.pdf">the vignette</a>.  </li>
 </ul>
 <br/>
 
