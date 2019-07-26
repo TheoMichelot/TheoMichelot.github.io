@@ -14,13 +14,13 @@ author_profile: true
 <em>Methods in Ecology and Evolution</em> <br/>
 Preprint on <em>arXiv</em>, arXiv:1810.10213.
 
-Bacheler, N. M., <strong>Michelot, T.</strong>, Cheshire, R. T., Shertzer, K. W. (2019) <br/>
-<a href="https://www.sciencedirect.com/science/article/pii/S0165783619300578">&quot;Fine-scale movement patterns and behavioral states of gray triggerfish Balistes capriscus determined from acoustic telemetry and hidden Markov models&quot; </a><br/>
-<em>Fisheries Research</em>, 215, pp. 76-89.
-
 <strong>Michelot, T.</strong>, Blackwell, P.G. (in press)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13154">&quot;State-switching continuous-time correlated random walks&quot; </a><br/>
 <em>Methods in Ecology and Evolution</em>, DOI: 10.1111/2041-210X.13154.
+
+Bacheler, N. M., <strong>Michelot, T.</strong>, Cheshire, R. T., Shertzer, K. W. (2019) <br/>
+<a href="https://www.sciencedirect.com/science/article/pii/S0165783619300578">&quot;Fine-scale movement patterns and behavioral states of gray triggerfish Balistes capriscus determined from acoustic telemetry and hidden Markov models&quot; </a><br/>
+<em>Fisheries Research</em>, 215, pp. 76-89.
 
 <strong>Michelot, T.</strong>, Blackwell, P.G., Matthiopoulos, J. (2019)<br /> 
 <a href="https://esajournals.onlinelibrary.wiley.com/doi/abstract/10.1002/ecy.2452">&quot;Linking resource selection and step selection models for habitat preferences in animals&quot; </a><br/>
