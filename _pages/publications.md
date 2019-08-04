@@ -7,10 +7,6 @@ author_profile: true
 
 ## Peer-reviewed papers
 
-<strong>Michelot, T.</strong>, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (preprint)<br /> 
-<a href="https://arxiv.org/abs/1810.10930">&quot;Inference in MCMC step selection models&quot; </a><br/>
-<em>arXiv</em>, arXiv:1810.10930.
-
 <strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (accepted)<br /> 
 <a href="https://arxiv.org/abs/1810.10213">&quot;The Langevin diffusion as a continuous-time model of animal movement and habitat selection&quot; </a><br/>
 <em>Methods in Ecology and Evolution</em> <br/>
@@ -55,6 +51,12 @@ Langrock, R., Kneib, T., Glennie, R., <strong>Michelot, T.</strong> (2017)<br />
 Langrock, R., <strong>Michelot, T.</strong>, Sohn, A., Kneib, T. (2015)<br />
 <a href="http://link.springer.com/article/10.1007/s00180-014-0547-5">&quot;Semiparametric stochastic volatility modelling using penalized splines&quot;</a><br />
 <em>Computational Statistics</em>, 30, pp. 517-537.
+
+## Preprints
+
+<strong>Michelot, T.</strong>, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (preprint)<br /> 
+<a href="https://arxiv.org/abs/1810.10930">&quot;Inference in MCMC step selection models&quot; </a><br/>
+<em>arXiv</em>, arXiv:1810.10930.
 
 ## Book chapters
 
