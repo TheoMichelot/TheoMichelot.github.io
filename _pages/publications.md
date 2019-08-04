@@ -5,6 +5,8 @@ permalink: /publications/
 author_profile: true
 ---
 
+## Peer-reviewed papers
+
 <strong>Michelot, T.</strong>, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (preprint)<br /> 
 <a href="https://arxiv.org/abs/1810.10930">&quot;Inference in MCMC step selection models&quot; </a><br/>
 <em>arXiv</em>, arXiv:1810.10930.
@@ -53,6 +55,12 @@ Langrock, R., Kneib, T., Glennie, R., <strong>Michelot, T.</strong> (2017)<br />
 Langrock, R., <strong>Michelot, T.</strong>, Sohn, A., Kneib, T. (2015)<br />
 <a href="http://link.springer.com/article/10.1007/s00180-014-0547-5">&quot;Semiparametric stochastic volatility modelling using penalized splines&quot;</a><br />
 <em>Computational Statistics</em>, 30, pp. 517-537.
+
+## Book chapters
+
+Antinori, P., <strong>Michelot, T.</strong>, Lescuyer, P., Müller, M., Acosta-Martin, A.E. (2019) <br/>
+<a href = "https://link.springer.com/protocol/10.1007/978-1-4939-9232-4_8">"Detection of Unknown Chemical Adduct Modifications on Proteins: From Wet to Dry Laboratory"</a> <br/>
+In: Mass Spectrometry of Proteins (pp. 99-113). Humana Press, New York, NY.
 
 <!-- {% include base_path %} -->
 
