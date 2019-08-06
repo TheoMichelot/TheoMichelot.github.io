@@ -13,7 +13,7 @@ author_profile: true
 
 <strong>Michelot, T.</strong>, Blackwell, P.G. (in press)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13154">&quot;State-switching continuous-time correlated random walks&quot; </a><br/>
-<em>Methods in Ecology and Evolution</em>, DOI: 10.1111/2041-210X.13154.
+<em>Methods in Ecology and Evolution</em>, 10, pp. 637-649.
 
 Bacheler, N. M., <strong>Michelot, T.</strong>, Cheshire, R. T., Shertzer, K. W. (2019) <br/>
 <a href="https://www.sciencedirect.com/science/article/pii/S0165783619300578">&quot;Fine-scale movement patterns and behavioral states of gray triggerfish Balistes capriscus determined from acoustic telemetry and hidden Markov models&quot; </a><br/>
