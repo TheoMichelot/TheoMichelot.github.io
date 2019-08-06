@@ -7,11 +7,11 @@ author_profile: true
 
 ## Peer-reviewed papers
 
-<strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (accepted)<br /> 
+<strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (in press)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13275">&quot;The Langevin diffusion as a continuous-time model of animal movement and habitat selection&quot; </a><br/>
 <em>Methods in Ecology and Evolution</em>, DOI: 10.1111/2041-210X.13275.
 
-<strong>Michelot, T.</strong>, Blackwell, P.G. (in press)<br /> 
+<strong>Michelot, T.</strong>, Blackwell, P.G. (2019)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13154">&quot;State-switching continuous-time correlated random walks&quot; </a><br/>
 <em>Methods in Ecology and Evolution</em>, 10, pp. 637-649.
 
