@@ -7,6 +7,14 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+<strong>Michelot, T.</strong>, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (in press)<br /> 
+<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170">&quot;Inference in MCMC step selection models&quot; </a><br/>
+<em>Biometrics</em>, DOI: 10.1111/biom.13170.
+
+Spangenberg, M.C., Serrouya, R., Dickie, M., DeMars, C.A., <strong>Michelot, T.</strong>, Boutin, S., and Wittmann, M.J. (in press). <br/>
+<a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2904">"Slowing down wolves to protect boreal caribou populations: a spatial simulation model of linear feature restoration"</a><br/>
+_Ecosphere_, DOI: 10.1002/ecs2.2904.
+
 <strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (in press)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13275">&quot;The Langevin diffusion as a continuous-time model of animal movement and habitat selection&quot; </a><br/>
 <em>Methods in Ecology and Evolution</em>, DOI: 10.1111/2041-210X.13275.
@@ -23,8 +31,8 @@ Bacheler, N. M., <strong>Michelot, T.</strong>, Cheshire, R. T., Shertzer, K. W.
 <a href="https://esajournals.onlinelibrary.wiley.com/doi/abstract/10.1002/ecy.2452">&quot;Linking resource selection and step selection models for habitat preferences in animals&quot; </a><br/>
 <em>Ecology</em>, 100 (1), DOI: 10.1002/ecy.2452.
 	
-Grecian, W.J., Lane, J., <strong>Michelot, T.</strong>, Wade, H., Hamer, K.C. (2018)<br /> 
-	<a href="http://rsif.royalsocietypublishing.org/content/15/143/20180084">&quot;Understanding the ontogeny of foraging behaviour: insights from combining marine predator bio-logging with satellite-derived oceanography in hidden Markov models&quot;</a><br/>
+Grecian, W.J., Lane, J., <strong>Michelot, T.</strong>, Wade, H., Hamer, K.C. (2018)<br />
+<a href="http://rsif.royalsocietypublishing.org/content/15/143/20180084">&quot;Understanding the ontogeny of foraging behaviour: insights from combining marine predator bio-logging with satellite-derived oceanography in hidden Markov models&quot;</a><br/>
 <em>Journal of the Royal Society Interface</em>, 15 (143), DOI: 10.1098/rsif.2018.0084.
 
 McClintock, B., <strong>Michelot, T.</strong> (2018)<br /> 
@@ -50,12 +58,6 @@ Langrock, R., Kneib, T., Glennie, R., <strong>Michelot, T.</strong> (2017)<br />
 Langrock, R., <strong>Michelot, T.</strong>, Sohn, A., Kneib, T. (2015)<br />
 <a href="http://link.springer.com/article/10.1007/s00180-014-0547-5">&quot;Semiparametric stochastic volatility modelling using penalized splines&quot;</a><br />
 <em>Computational Statistics</em>, 30, pp. 517-537.
-
-## Preprints
-
-<strong>Michelot, T.</strong>, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (preprint)<br /> 
-<a href="https://arxiv.org/abs/1810.10930">&quot;Inference in MCMC step selection models&quot; </a><br/>
-<em>arXiv</em>, arXiv:1810.10930.
 
 ## Book chapters
 
