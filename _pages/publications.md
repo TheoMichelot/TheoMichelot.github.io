@@ -15,13 +15,13 @@ Spangenberg, M.C., Serrouya, R., Dickie, M., DeMars, C.A., <strong>Michelot, T.<
 <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2904">"Slowing down wolves to protect boreal caribou populations: a spatial simulation model of linear feature restoration"</a><br/>
 _Ecosphere_, DOI: 10.1002/ecs2.2904.
 
-<strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (in press)<br /> 
+<strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (2019)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13275">&quot;The Langevin diffusion as a continuous-time model of animal movement and habitat selection&quot; </a><br/>
-<em>Methods in Ecology and Evolution</em>, DOI: 10.1111/2041-210X.13275.
+<em>Methods in Ecology and Evolution</em>, 10 (11), pp.\ 1894-1907.
 
 <strong>Michelot, T.</strong>, Blackwell, P.G. (2019)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/full/10.1111/2041-210X.13154">&quot;State-switching continuous-time correlated random walks&quot; </a><br/>
-<em>Methods in Ecology and Evolution</em>, 10, pp. 637-649.
+<em>Methods in Ecology and Evolution</em>, 10 (5), pp. 637-649.
 
 Bacheler, N. M., <strong>Michelot, T.</strong>, Cheshire, R. T., Shertzer, K. W. (2019) <br/>
 <a href="https://www.sciencedirect.com/science/article/pii/S0165783619300578">&quot;Fine-scale movement patterns and behavioral states of gray triggerfish Balistes capriscus determined from acoustic telemetry and hidden Markov models&quot; </a><br/>
@@ -37,7 +37,7 @@ Grecian, W.J., Lane, J., <strong>Michelot, T.</strong>, Wade, H., Hamer, K.C. (2
 
 McClintock, B., <strong>Michelot, T.</strong> (2018)<br /> 
 <a href="http://onlinelibrary.wiley.com/doi/10.1111/2041-210X.12995/abstract">&quot;momentuHMM: R package for generalized hidden Markov models of animal movement&quot; </a><br/>
-<em>Methods in Ecology and Evolution</em>, 9, pp. 1518-1530.
+<em>Methods in Ecology and Evolution</em>, 9 (6), pp. 1518-1530.
 
 <strong>Michelot, T.</strong>, Langrock, R., Bestley, S., Jonsen, I.D., Photopoulou, T., Patterson, T.A. (2017)<br /> 
 <a href="http://onlinelibrary.wiley.com/doi/10.1002/ecy.1880/abstract">&quot;Estimation and simulation of foraging trips in land-based marine predators&quot; </a><br/>
