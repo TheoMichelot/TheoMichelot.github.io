@@ -9,11 +9,15 @@ author_profile: true
 
 <strong>Michelot, T.</strong>, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (in press)<br /> 
 <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170">&quot;Inference in MCMC step selection models&quot; </a><br/>
-<em>Biometrics</em>, DOI: 10.1111/biom.13170.
+_Biometrics_, DOI: 10.1111/biom.13170.
 
-Spangenberg, M.C., Serrouya, R., Dickie, M., DeMars, C.A., <strong>Michelot, T.</strong>, Boutin, S., and Wittmann, M.J. (in press). <br/>
+Farhadinia, M.S., *Michelot, T.*, Johnson, P.J., Hunter, L.T.B., MacDonald, D.W.\ (2020)\\
+Understanding decision making in a food-caching predator using hidden Markov models\\
+_Movement Ecology_, 8 (9), DOI: 10.1186/s40462-020-0195-z.
+
+Spangenberg, M.C., Serrouya, R., Dickie, M., DeMars, C.A., <strong>Michelot, T.</strong>, Boutin, S., and Wittmann, M.J. (2019). <br/>
 <a href="https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2904">"Slowing down wolves to protect boreal caribou populations: a spatial simulation model of linear feature restoration"</a><br/>
-_Ecosphere_, DOI: 10.1002/ecs2.2904.
+_Ecosphere_,  10 (10), DOI: 10.1002/ecs2.2904.
 
 <strong>Michelot, T.</strong>, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (2019)<br /> 
 <a href="https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13275">&quot;The Langevin diffusion as a continuous-time model of animal movement and habitat selection&quot; </a><br/>
