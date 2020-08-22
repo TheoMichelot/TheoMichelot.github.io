@@ -65,7 +65,7 @@ Langrock, R., <strong>Michelot, T.</strong>, Sohn, A., Kneib, T. (2015)<br />
 
 ## Preprints
 
-*Michelot, T.*, Glennie, R., Harris, C., Thomas, L. (2020)<br />
+**Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2020)<br />
 [Varying-coefficient stochastic differential equations with applications in ecology](https://arxiv.org/abs/2008.09111)<br />
 _arXiv preprint_, arXiv:2008.09111.
 
