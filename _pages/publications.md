@@ -7,11 +7,11 @@ author_profile: true
 
 ## Peer-reviewed papers
 
-*Michelot, T.*, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (2020)<br /> 
+**Michelot, T.**, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (2020)<br /> 
 ["Inference in MCMC step selection models"](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170)<br />
 _Biometrics_, 76, pp. 438-447.
 
-Farhadinia, M.S., *Michelot, T.*, Johnson, P.J., Hunter, L.T.B., MacDonald, D.W.\ (2020)\\
+Farhadinia, M.S., **Michelot, T.**, Johnson, P.J., Hunter, L.T.B., MacDonald, D.W.\ (2020)\\
 ["Understanding decision making in a food-caching predator using hidden Markov models"](https://movementecologyjournal.biomedcentral.com/articles/10.1186/s40462-020-0195-z)\\
 _Movement Ecology_, 8 (9), DOI: 10.1186/s40462-020-0195-z.
 
