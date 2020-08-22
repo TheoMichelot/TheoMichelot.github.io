@@ -7,12 +7,12 @@ author_profile: true
 
 ## Peer-reviewed papers
 
-<strong>Michelot, T.</strong>, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (in press)<br /> 
-<a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170">&quot;Inference in MCMC step selection models&quot; </a><br/>
-_Biometrics_, DOI: 10.1111/biom.13170.
+*Michelot, T.*, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (2020)<br /> 
+["Inference in MCMC step selection models"](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170)<br />
+_Biometrics_, 76, pp. 438-447.
 
 Farhadinia, M.S., *Michelot, T.*, Johnson, P.J., Hunter, L.T.B., MacDonald, D.W.\ (2020)\\
-Understanding decision making in a food-caching predator using hidden Markov models\\
+["Understanding decision making in a food-caching predator using hidden Markov models"](https://movementecologyjournal.biomedcentral.com/articles/10.1186/s40462-020-0195-z)\\
 _Movement Ecology_, 8 (9), DOI: 10.1186/s40462-020-0195-z.
 
 Spangenberg, M.C., Serrouya, R., Dickie, M., DeMars, C.A., <strong>Michelot, T.</strong>, Boutin, S., and Wittmann, M.J. (2019). <br/>
@@ -62,6 +62,12 @@ Langrock, R., Kneib, T., Glennie, R., <strong>Michelot, T.</strong> (2017)<br />
 Langrock, R., <strong>Michelot, T.</strong>, Sohn, A., Kneib, T. (2015)<br />
 <a href="http://link.springer.com/article/10.1007/s00180-014-0547-5">&quot;Semiparametric stochastic volatility modelling using penalized splines&quot;</a><br />
 <em>Computational Statistics</em>, 30, pp. 517-537.
+
+## Preprints
+
+*Michelot, T.*, Glennie, R., Harris, C., Thomas, L. (2020)<br />
+[Varying-coefficient stochastic differential equations with applications in ecology](https://arxiv.org/abs/2008.09111)<br />
+_arXiv preprint_, arXiv:2008.09111.
 
 ## Book chapters
 
