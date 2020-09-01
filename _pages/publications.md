@@ -7,6 +7,10 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+Runde, B.J., **Michelot, T.**, Bacheler, N.M., Shertzer, K.W. and Buckel, J.A. (in press)<br /> 
+["Assigning fates in telemetry studies using hidden Markov models: an application to deepwater groupers released with descender devices"](https://afspubs.onlinelibrary.wiley.com/doi/abs/10.1002/nafm.10504)<br />
+_North American Journal of Fisheries Management_, DOI: 10.1002/nafm.10504.
+
 **Michelot, T.**, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (2020)<br /> 
 ["Inference in MCMC step selection models"](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170)<br />
 _Biometrics_, 76, pp. 438-447.
