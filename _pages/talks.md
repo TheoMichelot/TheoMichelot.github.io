@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 "Time-varying diffusion processes in movement ecology"\\
-Talk at the virtual International Statistical Ecology Conference, Sydney, Australia. June 2020.\\
+Talk at the virtual International Statistical Ecology Conference, Sydney, Australia. June 2020.
 
 "Linking scales of animal movement using statistical samplers"\\
 Seminar at the University of Alberta, Edmonton, Canada. March 2020.\\
