@@ -19,11 +19,11 @@ Farhadinia, M.S., **Michelot, T.**, Johnson, P.J., Hunter, L.T.B., MacDonald, D.
 ["Understanding decision making in a food-caching predator using hidden Markov models"](https://movementecologyjournal.biomedcentral.com/articles/10.1186/s40462-020-0195-z)\\
 _Movement Ecology_, 8 (9), DOI: 10.1186/s40462-020-0195-z.
 
-Spangenberg, M.C., Serrouya, R., Dickie, M., DeMars, C.A., **Michelot, T.**, Boutin, S., and Wittmann, M.J. (2019).\\
+Spangenberg, M.C., Serrouya, R., Dickie, M., DeMars, C.A., **Michelot, T.**, Boutin, S., and Wittmann, M.J. (2019)\\
 ["Slowing down wolves to protect boreal caribou populations: a spatial simulation model of linear feature restoration"](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecs2.2904)\\
 _Ecosphere_,  10 (10), DOI: 10.1002/ecs2.2904.
 
-**Michelot, T.**, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (2019)\\ 
+**Michelot, T.**, &Eacute;tienne, M.P., Gloaguen, P., Blackwell, P.G. (2019)\\
 ["The Langevin diffusion as a continuous-time model of animal movement and habitat selection"](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/2041-210X.13275)\\
 _Methods in Ecology and Evolution_, 10 (11), pp. 1894-1907.
 
@@ -70,7 +70,7 @@ _Computational Statistics_, 30, pp. 517-537.
 ## Preprints
 
 **Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2020)\\
-[Varying-coefficient stochastic differential equations with applications in ecology](https://arxiv.org/abs/2008.09111)\\
+["Varying-coefficient stochastic differential equations with applications in ecology"](https://arxiv.org/abs/2008.09111)\\
 _arXiv preprint_, arXiv:2008.09111.
 
 ## Book chapters
