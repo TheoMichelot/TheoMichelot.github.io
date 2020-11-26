@@ -73,7 +73,7 @@ _Computational Statistics_, 30, pp. 517-537.
 ["Varying-coefficient stochastic differential equations with applications in ecology"](https://arxiv.org/abs/2008.09111)\\
 _arXiv preprint_, arXiv:2008.09111.
 
-Klappstein, N.J., Potts, J.R., **Michelot, T.**, B\"orger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (2020)\\
+Klappstein, N.J., Potts, J.R., **Michelot, T.**, Börger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (2020)\\
 ["Energy selection functions: modelling the energetic drivers of animal movement and habitat use"](https://www.authorea.com/doi/full/10.22541/au.160640483.30543006)\\
 _Authorea preprint_, DOI: 10.22541/au.160640483.30543006.
 
