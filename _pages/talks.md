@@ -71,13 +71,11 @@ Talk at the Research Students' Conference in Probability and Statistics, Dublin,
 
 "moveHMM: an R package for modelling animal movement with hidden Markov models"\\
 Seminar at the Australian Antarctic Division, Hobart, Australia. June 2016.
+Seminar at the Sea Mammal Research Unit, St Andrews, UK. November 2015.
 
 "Hidden Markov models for animal movement and other ecological data".\\
 Three-day workshop held in Mossel Bay, South Africa. March 2016.\\
 [Workshop report](http://oceans-research.com/news/report-workshop-hidden-markov-models-animal-movement-ecological-data/)
-
-"moveHMM: an R package for modelling animal movement with hidden Markov models"\\
-Seminar at the Sea Mammal Research Unit, St Andrews, UK. November 2015.
 
 "A statistical introduction to animal movement modelling"\\
 Talk at the German Statistical Week, Hamburg, Germany. September 2015.
