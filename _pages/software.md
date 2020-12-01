@@ -5,7 +5,7 @@ permalink: /software/
 author_profile: true
 ---
 
-# moveHMM
+## moveHMM
 
 We developed the R package **moveHMM** for the analysis of movement data with hidden Markov models. 
 
@@ -17,7 +17,7 @@ We developed the R package **moveHMM** for the analysis of movement data with hi
 	
  - Short [video presentation](https://www.youtube.com/watch?v=90LqSNITrN0) for MEE.
          
-# momentuHMM
+## momentuHMM
 
 The R package **momentuHMM** extends moveHMM to more general and flexible models. Additional features include: unlimited number of data streams, inclusion of covariates on the observation distribution parameters, centres of attraction, multiple imputation to account for irregular sampling and/or measurement error, etc.
 
@@ -27,7 +27,7 @@ The R package **momentuHMM** extends moveHMM to more general and flexible models
 	
  - Get started with [the vignette](https://cran.r-project.org/web/packages/momentuHMM/vignettes/momentuHMM.pdf).
 
-# Other R packages
+## Other R packages
 
  - [**smoothSDE**](https://github.com/TheoMichelot/smoothSDE) can be used to fit varying-coefficient stochastic differential equations, described in [this preprint](https://arxiv.org/pdf/2008.09111.pdf).
 
@@ -35,7 +35,7 @@ The R package **momentuHMM** extends moveHMM to more general and flexible models
 	
  - [**localGibbs**](https://github.com/TheoMichelot/localGibbs) implements the local Gibbs model for animal movement and habitat selection, presented in [this paper](https://esajournals.onlinelibrary.wiley.com/doi/full/10.1002/ecy.2452) and [this paper](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170).
 
-# Miscellaneous
+## Miscellaneous
 
 Vianey Leos Barajas and I wrote [a tutorial about using Stan to implement hidden Markov models](https://arxiv.org/pdf/1806.10639.pdf), in particular to analyse animal movement data. In that document, we re-analyse the wild haggis data set from the moveHMM paper.
 		
