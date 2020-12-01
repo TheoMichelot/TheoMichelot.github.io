@@ -18,7 +18,7 @@ Talk at the British Ecological Society conference, Belfast, UK. December 2019.
 Seminar at the University of St Andrews, UK. November 2019.
 
 "Spline-based diffusion models and application to accelerometer data"\\
-Seminar at the University of Glasgow, UK. November 2019.
+Seminar at the University of Glasgow, UK. November 2019.\\
 Seminar at the University of St Andrews, UK. November 2019.
 
 "Hidden Markov models of animal movement and behaviour"\\
@@ -70,7 +70,7 @@ Best student talk award.
 Talk at the Research Students' Conference in Probability and Statistics, Dublin, Ireland. June 2016.
 
 "moveHMM: an R package for modelling animal movement with hidden Markov models"\\
-Seminar at the Australian Antarctic Division, Hobart, Australia. June 2016.
+Seminar at the Australian Antarctic Division, Hobart, Australia. June 2016.\\
 Seminar at the Sea Mammal Research Unit, St Andrews, UK. November 2015.
 
 "Hidden Markov models for animal movement and other ecological data".\\
