@@ -70,7 +70,7 @@ _Computational Statistics_, 30, pp. 517-537.
 ## Preprints
 
 **Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2020)\\
-["Varying-coefficient stochastic differential equations with applications in ecology"](https://arxiv.org/abs/2008.09111)\\
+["Varying-coefficient stochastic differential equations with applications in ecology"](https://arxiv.org/abs/2008.09111v2)\\
 _arXiv preprint_, arXiv:2008.09111.
 
 Klappstein, N.J., Potts, J.R., **Michelot, T.**, Börger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (2020)\\
