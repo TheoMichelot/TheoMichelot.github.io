@@ -7,6 +7,10 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+Conners, M., **Michelot, T.**, Heywood, E., Orben, R.A., Phillips, R., Vyssotski, A., Shaffer, S.A., Thorne, L. (in press)\\ 
+Hidden Markov models reveal major animal movement modes from multi-sensor tags: a case study of four albatross species.\\ 
+_Movement Ecology_.
+
 Runde, B.J., **Michelot, T.**, Bacheler, N.M., Shertzer, K.W. and Buckel, J.A. (in press)\\
 ["Assigning fates in telemetry studies using hidden Markov models: an application to deepwater groupers released with descender devices"](https://afspubs.onlinelibrary.wiley.com/doi/abs/10.1002/nafm.10504)\\
 _North American Journal of Fisheries Management_, DOI: 10.1002/nafm.10504.
