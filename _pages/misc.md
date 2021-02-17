@@ -5,6 +5,6 @@ permalink: /misc/
 author_profile: true
 ---
 
-I wrote a Shiny app to generate random maps using [https://theomichelot.shinyapps.io/perlin_app/](Perlin noise).
+I wrote a Shiny app to generate random maps using [Perlin noise](https://theomichelot.shinyapps.io/perlin_app/).
 
 ![study map](/images/perlin.png)
