@@ -7,13 +7,13 @@ author_profile: true
 
 ## Peer-reviewed papers
 
-Conners, M., **Michelot, T.**, Heywood, E., Orben, R.A., Phillips, R., Vyssotski, A., Shaffer, S.A., Thorne, L. (in press)\\
-Hidden Markov models reveal major animal movement modes from multi-sensor tags: a case study of four albatross species.\\
-_Movement Ecology_.
+Conners, M., **Michelot, T.**, Heywood, E., Orben, R.A., Phillips, R., Vyssotski, A., Shaffer, S.A., Thorne, L. (2021)\\
+["Hidden Markov models reveal major animal movement modes from multi-sensor tags: a case study of four albatross species"](https://movementecologyjournal.biomedcentral.com/articles/10.1186/s40462-021-00243-z)\\
+_Movement Ecology_, 9 (7), DOI: 10.1186/s40462-021-00243-z.
 
-Runde, B.J., **Michelot, T.**, Bacheler, N.M., Shertzer, K.W. and Buckel, J.A. (in press)\\
+Runde, B.J., **Michelot, T.**, Bacheler, N.M., Shertzer, K.W. and Buckel, J.A. (2020)\\
 ["Assigning fates in telemetry studies using hidden Markov models: an application to deepwater groupers released with descender devices"](https://afspubs.onlinelibrary.wiley.com/doi/abs/10.1002/nafm.10504)\\
-_North American Journal of Fisheries Management_, DOI: 10.1002/nafm.10504.
+_North American Journal of Fisheries Management_, 40, pp. 1417-1434.
 
 **Michelot, T.**, Blackwell, P.G., Chamaill&eacute;-Jammes, S., Matthiopoulos, J. (2020)\\
 ["Inference in MCMC step selection models"](https://onlinelibrary.wiley.com/doi/abs/10.1111/biom.13170)\\
