@@ -7,6 +7,10 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+**Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (in press)\\
+["Varying-coefficient stochastic differential equations with applications in ecology"](https://arxiv.org/abs/2008.09111v2)\\
+_Journal of Agricultural, Biological, and Environmental Statistics_. (Preprint at arXiv:2008.09111).
+
 Conners, M., **Michelot, T.**, Heywood, E., Orben, R.A., Phillips, R., Vyssotski, A., Shaffer, S.A., Thorne, L. (2021)\\
 ["Hidden Markov models reveal major animal movement modes from multi-sensor tags: a case study of four albatross species"](https://movementecologyjournal.biomedcentral.com/articles/10.1186/s40462-021-00243-z)\\
 _Movement Ecology_, 9 (7), DOI: 10.1186/s40462-021-00243-z.
@@ -72,10 +76,6 @@ Langrock, R., **Michelot, T.**, Sohn, A., Kneib, T. (2015)\\
 _Computational Statistics_, 30, pp. 517-537.
 
 ## Preprints
-
-**Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2020)\\
-["Varying-coefficient stochastic differential equations with applications in ecology"](https://arxiv.org/abs/2008.09111v2)\\
-_arXiv preprint_, arXiv:2008.09111.
 
 Klappstein, N.J., Potts, J.R., **Michelot, T.**, Börger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (2020)\\
 ["Energy selection functions: modelling the energetic drivers of animal movement and habitat use"](https://www.authorea.com/doi/full/10.22541/au.160640483.30543006)\\
