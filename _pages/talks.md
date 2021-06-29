@@ -5,8 +5,11 @@ permalink: /talks/
 author_profile: true
 ---
 
+"hmmTMB: hidden Markov models with non-parametric and random effects"\\
+Talk at the meeting of the National Centre for Statistical Ecology Conference, online. June 2021.
+
 "Time-varying diffusion processes in movement ecology"\\
-Talk at the virtual International Statistical Ecology Conference, Sydney, Australia. June 2020.
+Talk at the International Statistical Ecology Conference, online. June 2020.
 
 "Linking scales of animal movement using statistical samplers"\\
 Seminar at the University of Alberta, Edmonton, Canada. March 2020.
