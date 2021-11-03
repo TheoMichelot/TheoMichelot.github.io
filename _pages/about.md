@@ -10,7 +10,7 @@ redirect_from:
 
 ## Interests
 
-- Hidden Markov models, state-space models, and applications in ecology
+- Hidden Markov models, state-space models, and their applications in ecology
 - Inference for stochastic differential equations
 - Animal movement models
 - Habitat selection models
