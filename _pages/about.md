@@ -18,7 +18,7 @@ redirect_from:
 
 ## Biography
 
-I am a postdoctoral researcher in statistics at the [Centre for Research into Ecological and Environmental Modelling](https://www.creem.st-andrews.ac.uk/) (CREEM) of the University of St Andrews, UK, where I started in February 2019. I am developing flexible stochastic differential equation models, and using them as continuous-time models of animal movement and behaviour.
+Since January 2022, I am a lecturer (assistant professor) in statistics at the University of St Andrews, UK. Between 2019 and 2021, I was a postdoctoral researcher at the [Centre for Research into Ecological and Environmental Modelling](https://www.creem.st-andrews.ac.uk/) (CREEM) of the University of St Andrews, where I developed flexible stochastic differential equation models and used them as continuous-time models of animal movement and behaviour.
 
 Between 2016 and 2018, I did a PhD at the School of Mathematics and Statistics of the University of Sheffield, under the supervision of [Paul Blackwell](http://www.paul-blackwell.staff.shef.ac.uk/index.html). I worked on the integration of animal movement, space use, and habitat selection across spatio-temporal scales. My thesis is available online: [_Stochastic models of animal movement and habitat selection_](http://etheses.whiterose.ac.uk/23688/1/TheoMichelot_PhD_thesis_April2019.pdf).
 
