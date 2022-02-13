@@ -7,6 +7,14 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+Glennie, R., Adam, T., Leos-Barajas, V., **Michelot, T.**, Photopoulou, T., & McClintock, B.T. (in press)\\
+["Hidden Markov models: pitfalls and opportunities in ecology"](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13801) \\
+_Methods in Ecology and Evolution_. DOI: 10.1111/2041-210X.13801.
+
+**Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2021)\\
+["Varying-coefficient stochastic differential equations with applications in ecology"](https://link.springer.com/article/10.1007%2Fs13253-021-00450-6)\\
+_Journal of Agricultural, Biological, and Environmental Statistics_. DOI: 10.1007/s13253-021-00450-6.
+
 **Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2021)\\
 ["Varying-coefficient stochastic differential equations with applications in ecology"](https://link.springer.com/article/10.1007%2Fs13253-021-00450-6)\\
 _Journal of Agricultural, Biological, and Environmental Statistics_. DOI: 10.1007/s13253-021-00450-6.
