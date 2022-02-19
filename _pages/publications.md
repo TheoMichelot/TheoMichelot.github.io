@@ -7,13 +7,13 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+Klappstein, N.J., Potts, J.R., **Michelot, T.**, Börger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (in press)\\
+["Energy-based step selection analysis: modelling the energetic drivers of animal movement and habitat use"](https://www.authorea.com/doi/full/10.22541/au.160640483.30543006)\\
+_Journal of Animal Ecology_.
+
 Glennie, R., Adam, T., Leos-Barajas, V., **Michelot, T.**, Photopoulou, T., & McClintock, B.T. (in press)\\
 ["Hidden Markov models: pitfalls and opportunities in ecology"](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13801) \\
 _Methods in Ecology and Evolution_. DOI: 10.1111/2041-210X.13801.
-
-**Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2021)\\
-["Varying-coefficient stochastic differential equations with applications in ecology"](https://link.springer.com/article/10.1007%2Fs13253-021-00450-6)\\
-_Journal of Agricultural, Biological, and Environmental Statistics_. DOI: 10.1007/s13253-021-00450-6.
 
 **Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2021)\\
 ["Varying-coefficient stochastic differential equations with applications in ecology"](https://link.springer.com/article/10.1007%2Fs13253-021-00450-6)\\
@@ -82,12 +82,6 @@ _Biometrical Journal_, 58, pp. 223-239.
 Langrock, R., **Michelot, T.**, Sohn, A., Kneib, T. (2015)\\
 ["Semiparametric stochastic volatility modelling using penalized splines"](http://link.springer.com/article/10.1007/s00180-014-0547-5)\\
 _Computational Statistics_, 30, pp. 517-537.
-
-## Preprints
-
-Klappstein, N.J., Potts, J.R., **Michelot, T.**, Börger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (2020)\\
-["Energy selection functions: modelling the energetic drivers of animal movement and habitat use"](https://www.authorea.com/doi/full/10.22541/au.160640483.30543006)\\
-_Authorea preprint_, DOI: 10.22541/au.160640483.30543006.
 
 ## Book chapters
 

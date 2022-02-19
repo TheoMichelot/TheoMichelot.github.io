@@ -5,6 +5,13 @@ permalink: /talks/
 author_profile: true
 ---
 
+"Multiscale models of animal movement and space use"\\
+Seminar at Dalhousie University, Halifax, Canada. February 2022.
+
+"Introduction to analysing animal movement data in R"\\
+Webinar of Ecological Forecasting Initiative & Ecological Society of America. February 2022.\\
+[Recording available online](https://www.youtube.com/watch?v=WELTpbB5BuU).
+	
 "hmmTMB: hidden Markov models with non-parametric and random effects"\\
 Talk at the meeting of the National Centre for Statistical Ecology Conference, online. June 2021.
 
