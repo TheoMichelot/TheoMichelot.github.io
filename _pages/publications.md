@@ -19,10 +19,6 @@ _Methods in Ecology and Evolution_. DOI: 10.1111/2041-210X.13801.
 ["Varying-coefficient stochastic differential equations with applications in ecology"](https://link.springer.com/article/10.1007%2Fs13253-021-00450-6)\\
 _Journal of Agricultural, Biological, and Environmental Statistics_. DOI: 10.1007/s13253-021-00450-6.
 
-**Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2021)\\
-["Varying-coefficient stochastic differential equations with applications in ecology"](https://link.springer.com/article/10.1007%2Fs13253-021-00450-6)\\
-_Journal of Agricultural, Biological, and Environmental Statistics_. DOI: 10.1007/s13253-021-00450-6.
-
 Conners, M., **Michelot, T.**, Heywood, E., Orben, R.A., Phillips, R., Vyssotski, A., Shaffer, S.A., Thorne, L. (2021)\\
 ["Hidden Markov models reveal major animal movement modes from multi-sensor tags: a case study of four albatross species"](https://movementecologyjournal.biomedcentral.com/articles/10.1186/s40462-021-00243-z)\\
 _Movement Ecology_, 9 (7), DOI: 10.1186/s40462-021-00243-z.
