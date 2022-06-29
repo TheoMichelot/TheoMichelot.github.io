@@ -27,6 +27,20 @@ The R package **momentuHMM** extends moveHMM to more general and flexible models
 	
  - Get started with [the vignette](https://cran.r-project.org/web/packages/momentuHMM/vignettes/momentuHMM.pdf).
 
+## hmmTMB
+
+**hmmTMB** is a general R package for hidden Markov models, which uses TMB and mgcv to allow for random effects and non-parametric covariate effects on model parameters (with automatic smoothness selection). The package is available on [Github](https://github.com/TheoMichelot/hmmTMB), and it is described in several vignettes:
+
+- [Overview of hmmTMB workflow](https://theomichelot.github.io/files/hmmTMB_workflow.pdf) (energy price case study)
+
+- [Analysing animal movement data using hmmTMB](https://theomichelot.github.io/files/hmmTMB_example_movement.pdf)
+
+- [Analysing occupancy data using hmmTMB](https://theomichelot.github.io/files/hmmTMB_example_occupancy.pdf)
+
+- [Bayesian inference on hidden Markov models using hmmTMB](https://theomichelot.github.io/files/hmmTMB_example_stan.pdf)
+
+- [Advanced features of hmmTMB](https://theomichelot.github.io/files/hmmTMB_advanced_features.pdf)
+
 ## Other R packages
 
  - [**smoothSDE**](https://github.com/TheoMichelot/smoothSDE) can be used to fit varying-coefficient stochastic differential equations, described in [this preprint](https://arxiv.org/pdf/2008.09111.pdf).
