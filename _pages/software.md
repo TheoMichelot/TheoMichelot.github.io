@@ -31,15 +31,15 @@ The R package **momentuHMM** extends moveHMM to more general and flexible models
 
 **hmmTMB** is a general R package for hidden Markov models, which uses TMB and mgcv to allow for random effects and non-parametric covariate effects on model parameters (with automatic smoothness selection). The package is available on [Github](https://github.com/TheoMichelot/hmmTMB), and it is described in several vignettes:
 
-- [Overview of hmmTMB workflow](https://theomichelot.github.io/files/hmmTMB_workflow.pdf) (energy price case study)
+- [Overview of hmmTMB workflow](https://github.com/TheoMichelot/hmmTMB/blob/master/vignettes/hmmTMB_workflow.pdf) (energy price case study)
 
-- [Analysing animal movement data using hmmTMB](https://theomichelot.github.io/files/hmmTMB_example_movement.pdf)
+- [Analysing animal movement data using hmmTMB](https://github.com/TheoMichelot/hmmTMB/blob/master/vignettes/hmmTMB_example_movement.pdf)
 
-- [Analysing occupancy data using hmmTMB](https://theomichelot.github.io/files/hmmTMB_example_occupancy.pdf)
+- [Analysing occupancy data using hmmTMB](https://github.com/TheoMichelot/hmmTMB/blob/master/vignettes/hmmTMB_example_occupancy.pdf)
 
-- [Bayesian inference on hidden Markov models using hmmTMB](https://theomichelot.github.io/files/hmmTMB_example_stan.pdf)
+- [Bayesian inference for hidden Markov models using hmmTMB](https://github.com/TheoMichelot/hmmTMB/blob/master/vignettes/hmmTMB_example_stan.pdf)
 
-- [Advanced features of hmmTMB](https://theomichelot.github.io/files/hmmTMB_advanced_features.pdf)
+- [Advanced features of hmmTMB](https://github.com/TheoMichelot/hmmTMB/blob/master/vignettes/hmmTMB_advanced_features.pdf)
 
 ## Other R packages
 
