@@ -83,6 +83,16 @@ Langrock, R., **Michelot, T.**, Sohn, A., Kneib, T. (2015)\\
 ["Semiparametric stochastic volatility modelling using penalized splines"](http://link.springer.com/article/10.1007/s00180-014-0547-5)\\
 _Computational Statistics_, 30, pp. 517-537.
 
+## Preprints
+
+**Michelot, T.** (2022)\\
+["hmmTMB: Hidden Markov models with flexible covariate effects in R'](https://arxiv.org/abs/2211.14139)\\
+_arXiv preprint_, arXiv:2211.14139.
+
+Klappstein, N.J., Thomas, L., & **Michelot, T.** (2022)\\
+["Flexible hidden Markov models for behaviour-dependent habitat selection"](https://www.biorxiv.org/content/10.1101/2022.11.30.518554v1.abstract)\\
+_bioRxiv preprint_, DOI: 10.1101/2022.11.30.518554.
+
 ## Book chapters
 
 Antinori, P., **Michelot, T.**, Lescuyer, P., Müller, M., Acosta-Martin, A.E. (2019)\\
