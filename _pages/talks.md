@@ -6,7 +6,7 @@ author_profile: true
 ---
 
 "Varying-coefficient stochastic differential equations"\\
-Invited talk at the JABES showcase of the International Biometric Conference, online. October 2022.
+Invited talk at the JABES showcase of the International Biometric Conference, online. October 2022.\\
 Invited talk at the Joint Statistical Meeting, online. August 2022.
 
 "Detecting behavioural responses from movement data using stochastic differential equations"\\
