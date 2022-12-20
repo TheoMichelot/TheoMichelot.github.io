@@ -89,6 +89,10 @@ _Computational Statistics_, 30, pp. 517-537.
 ["hmmTMB: Hidden Markov models with flexible covariate effects in R'](https://arxiv.org/abs/2211.14139)\\
 _arXiv preprint_, arXiv:2211.14139.
 
+**Michelot, T.**, Glennie, R., Thomas, L., Quick, N., Harris, C.M. (2022)\\
+["Continuous-time modelling of behavioural responses in animal movement"](https://arxiv.org/abs/2212.09574)\\
+_arXiv preprint_, arXiv:2212.09574.
+
 Klappstein, N.J., Thomas, L., & **Michelot, T.** (2022)\\
 ["Flexible hidden Markov models for behaviour-dependent habitat selection"](https://www.biorxiv.org/content/10.1101/2022.11.30.518554v1.abstract)\\
 _bioRxiv preprint_, DOI: 10.1101/2022.11.30.518554.
