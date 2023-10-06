@@ -7,11 +7,13 @@ author_profile: true
 
 ## Courses taught at Dalhousie University
 
-- [Introductory Statistics for Science and Health Sciences (STAT 1060)](https://academiccalendar.dal.ca/Catalog/ViewCatalog.aspx?pageid=viewcatalog&entitytype=CID&entitycode=STAT+1060) (Winter 2023)
+- STAT 4370/5370: Stochastic Processes (Fall 2023)
+  - [Course notes](https://theomichelot.github.io/files/Stochastic-Processes.pdf)
+- STAT 1060: Introductory Statistics for Science and Health Sciences (Winter 2023)
 
 ## Courses taught at the University of St Andrews
 
-- [Multivariate Analysis (MT5758)](https://www.st-andrews.ac.uk/subjects/modules/catalogue/?code=MT5758&academic_year=2021/2) (Spring 2022)
+- MT5758: Multivariate Analysis (Spring 2022)
 
 
 <!-- {% include base_path %} -->
