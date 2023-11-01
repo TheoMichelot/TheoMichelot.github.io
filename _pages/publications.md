@@ -9,12 +9,12 @@ author_profile: true
 
 **Michelot, T.**, Glennie, R., Thomas, L., Quick, N., Harris, C.M. (2023)\\
 ["Continuous-time modelling of behavioural responses in animal movement"](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-4/Continuous-time-modelling-of-behavioural-responses-in-animal-movement/10.1214/23-AOAS1776.short)\\
-_Annals of Applied Statistics_, 17 (4), pp. 3570-3588.
+_Annals of Applied Statistics_, 17 (4), pp. 3570-3588.\\
 [Get a copy](https://theomichelot.github.io/files/2023_AOAS_SDE_BRS.pdf)
 
 Klappstein, N.J., Thomas, L., & **Michelot, T.** (2023)\\
 ["Flexible hidden Markov models for behaviour-dependent habitat selection"](https://link.springer.com/article/10.1186/s40462-023-00392-3)\\
-_Movement Ecology_, 11 (30), DOI: 10.1186/s40462-023-00392-3.
+_Movement Ecology_, 11 (30), DOI: 10.1186/s40462-023-00392-3.\\
 [Get a copy](https://theomichelot.github.io/files/2023_Klappstein_MoveEco.pdf)
 
 Glennie, R., Adam, T., Leos-Barajas, V., **Michelot, T.**, Photopoulou, T., & McClintock, B.T. (2023)\\
