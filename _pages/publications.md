@@ -7,15 +7,25 @@ author_profile: true
 
 ## Peer-reviewed papers
 
-Klappstein, N.J., Potts, J.R., **Michelot, T.**, Börger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (in press)\\
+**Michelot, T.**, Glennie, R., Thomas, L., Quick, N., Harris, C.M. (2023)\\
+["Continuous-time modelling of behavioural responses in animal movement"](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-4/Continuous-time-modelling-of-behavioural-responses-in-animal-movement/10.1214/23-AOAS1776.short)\\
+_Annals of Applied Statistics_, 17 (4), pp. 3570-3588.
+[Get a copy](https://theomichelot.github.io/files/2023_AOAS_SDE_BRS.pdf)
+
+Klappstein, N.J., Thomas, L., & **Michelot, T.** (2023)\\
+["Flexible hidden Markov models for behaviour-dependent habitat selection"](https://link.springer.com/article/10.1186/s40462-023-00392-3)\\
+_Movement Ecology_, 11 (30), DOI: 10.1186/s40462-023-00392-3.
+[Get a copy](https://theomichelot.github.io/files/2023_Klappstein_MoveEco.pdf)
+
+Glennie, R., Adam, T., Leos-Barajas, V., **Michelot, T.**, Photopoulou, T., & McClintock, B.T. (2023)\\
+["Hidden Markov models: pitfalls and opportunities in ecology"](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13801) \\
+_Methods in Ecology and Evolution_. DOI: 10.1111/2041-210X.13801.\\
+[Get a copy](https://theomichelot.github.io/files/2023_Glennie_MEE.pdf)
+
+Klappstein, N.J., Potts, J.R., **Michelot, T.**, Börger, L., Pilfold, N.W., Lewis, M., Derocher, A.E. (2022)\\
 ["Energy-based step selection analysis: modelling the energetic drivers of animal movement and habitat use"](https://besjournals.onlinelibrary.wiley.com/doi/abs/10.1111/1365-2656.13687)\\
 _Journal of Animal Ecology_, DOI: 10.1111/1365-2656.13687.\\
 [Get a copy](https://theomichelot.github.io/files/2022_Klappstein_JAE.pdf)
-
-Glennie, R., Adam, T., Leos-Barajas, V., **Michelot, T.**, Photopoulou, T., & McClintock, B.T. (in press)\\
-["Hidden Markov models: pitfalls and opportunities in ecology"](https://besjournals.onlinelibrary.wiley.com/doi/10.1111/2041-210X.13801) \\
-_Methods in Ecology and Evolution_. DOI: 10.1111/2041-210X.13801.\\
-[Get a copy](https://theomichelot.github.io/files/2022_Glennie_MEE.pdf)
 
 **Michelot, T.**, Glennie, R., Harris, C., Thomas, L. (2021)\\
 ["Varying-coefficient stochastic differential equations with applications in ecology"](https://link.springer.com/article/10.1007%2Fs13253-021-00450-6)\\
@@ -108,13 +118,7 @@ _Computational Statistics_, 30, pp. 517-537.\\
 ["hmmTMB: Hidden Markov models with flexible covariate effects in R'](https://arxiv.org/abs/2211.14139)\\
 _arXiv preprint_, arXiv:2211.14139.
 
-**Michelot, T.**, Glennie, R., Thomas, L., Quick, N., Harris, C.M. (2022)\\
-["Continuous-time modelling of behavioural responses in animal movement"](https://arxiv.org/abs/2212.09574)\\
-_arXiv preprint_, arXiv:2212.09574.
 
-Klappstein, N.J., Thomas, L., & **Michelot, T.** (2022)\\
-["Flexible hidden Markov models for behaviour-dependent habitat selection"](https://www.biorxiv.org/content/10.1101/2022.11.30.518554v1.abstract)\\
-_bioRxiv preprint_, DOI: 10.1101/2022.11.30.518554.
 
 ## Book chapters
 
