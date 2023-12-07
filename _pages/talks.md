@@ -5,6 +5,23 @@ permalink: /talks/
 author_profile: true
 ---
 
+"Flexible hidden Markov models in ecology and the R package hmmTMB"\\
+Invited seminar at Memorial University, St John's, Canada. November 2023.\\
+Invited talk at CANSSI/OTN early-career workshop, Halifax, Canada. November 2023.\\
+Invited webinar for the Journal of Statistical Theory and Practice, online. November 2023.\\
+[Recording available online](https://cassyni.com/events/71QFHpfprvkFTkRGCdvLQu)
+
+"Towards a mechanistic understanding of animal movement"\\
+Invited discussion leader at the Gordon Research Seminar on Movement Ecology, Bargga, Italy. May 2023.
+
+"Multiscale models of animal space use: from small-scale movement to large-scale distributions"\\
+Poster at the Gordon Research Conference on Movement Ecology, Bargga, Italy. June 2023.\\
+Remote invited seminar for the BioMove research group. March 2023.
+
+"Flexible stochastic differential equations for animal movement"\\
+Invited talk at the International Conference in Statistics and Data Science, Florence, Italy. December
+2022.
+
 "Varying-coefficient stochastic differential equations"\\
 Invited talk at the JABES showcase of the International Biometric Conference, online. October 2022.\\
 Invited talk at the Joint Statistical Meeting, online. August 2022.
