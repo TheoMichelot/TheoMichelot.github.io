@@ -7,6 +7,16 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+Invernizzi, E., **Michelot, T.**, Popov, V., Ng, N., Macqueen, E., Rouviere, A., ... & Sasaki, T. (2024).\\
+[Identifying cues for self-organized nest wall-building behaviour in the rock ant, Temnothorax rugatulus, using hidden Markov models](https://doi.org/10.1016/j.anbehav.2024.01.008) \\
+Animal Behaviour, 210, pp. 315-330.\\
+[Get a copy](https://theomichelot.github.io/files/2024_Invernizzi_AnimalBehaviour.pdf)
+
+**Michelot, T.**, Klappstein, N. J., Potts, J. R., & Fieberg, J. (2024).\\ 
+["Understanding step selection analysis through numerical integration"](https://doi.org/10.1111/2041-210X.14248)\\
+_Methods in Ecology and Evolution_, 15(1), pp. 24-35.\\
+[Get a copy](https://theomichelot.github.io/files/2024_Michelot_MEE.pdf)
+
 **Michelot, T.**, Glennie, R., Thomas, L., Quick, N., Harris, C.M. (2023)\\
 ["Continuous-time modelling of behavioural responses in animal movement"](https://projecteuclid.org/journals/annals-of-applied-statistics/volume-17/issue-4/Continuous-time-modelling-of-behavioural-responses-in-animal-movement/10.1214/23-AOAS1776.short)\\
 _Annals of Applied Statistics_, 17 (4), pp. 3570-3588.\\
