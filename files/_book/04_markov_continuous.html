@@ -1,0 +1,2144 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>4&nbsp; Continuous-time Markov processes – Stochastic Processes</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./05_HMM.html" rel="next">
+<link href="./03_poisson.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
+<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
+<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_markov_continuous.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Continuous-time Markov processes</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./cover_spiral.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Stochastic Processes</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Stochastic-Processes.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_background.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Background</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_markov_discrete.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Discrete-time Markov processes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_poisson.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Poisson processes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_markov_continuous.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Continuous-time Markov processes</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_HMM.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hidden Markov models</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link active" data-scroll-target="#introduction"><span class="header-section-number">4.1</span> Introduction</a>
+  <ul class="collapse">
+  <li><a href="#definition" id="toc-definition" class="nav-link" data-scroll-target="#definition"><span class="header-section-number">4.1.1</span> Definition</a></li>
+  <li><a href="#holding-times" id="toc-holding-times" class="nav-link" data-scroll-target="#holding-times"><span class="header-section-number">4.1.2</span> Holding times</a></li>
+  </ul></li>
+  <li><a href="#model-specification" id="toc-model-specification" class="nav-link" data-scroll-target="#model-specification"><span class="header-section-number">4.2</span> Model specification</a>
+  <ul class="collapse">
+  <li><a href="#transition-rates" id="toc-transition-rates" class="nav-link" data-scroll-target="#transition-rates"><span class="header-section-number">4.2.1</span> Transition rates</a></li>
+  <li><a href="#simulating-from-a-continuous-time-markov-process" id="toc-simulating-from-a-continuous-time-markov-process" class="nav-link" data-scroll-target="#simulating-from-a-continuous-time-markov-process"><span class="header-section-number">4.2.2</span> Simulating from a continuous-time Markov process</a></li>
+  <li><a href="#explosive-markov-chains" id="toc-explosive-markov-chains" class="nav-link" data-scroll-target="#explosive-markov-chains"><span class="header-section-number">4.2.3</span> Explosive Markov chains</a></li>
+  </ul></li>
+  <li><a href="#behaviour-at-intermediate-time-scale" id="toc-behaviour-at-intermediate-time-scale" class="nav-link" data-scroll-target="#behaviour-at-intermediate-time-scale"><span class="header-section-number">4.3</span> Behaviour at intermediate time scale</a>
+  <ul class="collapse">
+  <li><a href="#transition-probabilities" id="toc-transition-probabilities" class="nav-link" data-scroll-target="#transition-probabilities"><span class="header-section-number">4.3.1</span> Transition probabilities</a></li>
+  <li><a href="#marginal-distribution" id="toc-marginal-distribution" class="nav-link" data-scroll-target="#marginal-distribution"><span class="header-section-number">4.3.2</span> Marginal distribution</a></li>
+  </ul></li>
+  <li><a href="#first-step-analysis" id="toc-first-step-analysis" class="nav-link" data-scroll-target="#first-step-analysis"><span class="header-section-number">4.4</span> First step analysis</a></li>
+  <li><a href="#long-term-behaviour" id="toc-long-term-behaviour" class="nav-link" data-scroll-target="#long-term-behaviour"><span class="header-section-number">4.5</span> Long-term behaviour</a></li>
+  <li><a href="#continuous-state-space-brownian-motion" id="toc-continuous-state-space-brownian-motion" class="nav-link" data-scroll-target="#continuous-state-space-brownian-motion"><span class="header-section-number">4.6</span> Continuous state space: Brownian motion</a></li>
+  <li><a href="#problems" id="toc-problems" class="nav-link" data-scroll-target="#problems"><span class="header-section-number">4.7</span> Problems</a></li>
+  <li><a href="#appendix-some-proofs" id="toc-appendix-some-proofs" class="nav-link" data-scroll-target="#appendix-some-proofs">Appendix: some proofs</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Continuous-time Markov processes</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We will now describe continuous-time Markov processes, which include Poisson processes as a special case. We will continue using the letter <span class="math inline">\(t\)</span> to represent time as a continuous variable (as opposed to the discrete index <span class="math inline">\(n\)</span> in Chapter 2).</p>
+<section id="introduction" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="introduction"><span class="header-section-number">4.1</span> Introduction</h2>
+<section id="definition" class="level3" data-number="4.1.1">
+<h3 data-number="4.1.1" class="anchored" data-anchor-id="definition"><span class="header-section-number">4.1.1</span> Definition</h3>
+<p>The discrete-time Markov property is written in terms of a sequence of random variables defined over a regular time grid. It needs to be slightly modified in the continuous-time setting.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The process <span class="math inline">\((X_t)_{t \geq 0}\)</span> is a <strong>continuous-time Markov process</strong> with countable state space <span class="math inline">\(\mathcal{S}\)</span> if, for all <span class="math inline">\(0 \leq r \leq s \leq t\)</span> and <span class="math inline">\(i, j \in \mathcal{S}\)</span>, <span class="math display">\[
+\Pr(X_{t} = j \mid X_s, X_r) = \Pr(X_t = j \mid X_s).
+\]</span> This is the continuous-time version of the Markov property.</p>
+</div>
+</div>
+<p>This is very similar to the definition of a discrete-time Markov chain. In the discrete-time case, we said that the process at time <span class="math inline">\(n + 1\)</span> was independent of its values at times <span class="math inline">\(\{ 0, \dots, n - 1\}\)</span> conditionally on its last value, i.e., at time <span class="math inline">\(n\)</span>. In continuous time, there is no canonical time interval, so the property is instead defined for three arbitrary times <span class="math inline">\(r \leq s \leq t\)</span> on <span class="math inline">\([0, \infty)\)</span>. Given several past values of the process (<span class="math inline">\(X_s\)</span> and <span class="math inline">\(X_r\)</span>), only the most recent (<span class="math inline">\(X_s\)</span>) is informative to write the distribution of the current value of the process (<span class="math inline">\(X_t\)</span>).</p>
+<p>Continuous-time Markov processes can be defined over countable (discrete) or uncountable (continuous) state spaces, and we will mostly focus on the countable case, where they are sometimes called “Markov jump processes” (because the process jumps between discrete values). We will talk about “jumps”, “switches”, and “transitions” interchangeably.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.2
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A continuous-time Markov chain <span class="math inline">\((X_t)\)</span> is <strong>time-homogeneous</strong> if, for any <span class="math inline">\(s, t \geq 0\)</span>, <span class="math display">\[
+\Pr(X_{s + t} = j \mid X_s = i) = \Pr(X_t = j \mid X_0 = i),\quad \text{for } i, j \in \mathcal{S}.
+\]</span></p>
+<p>That is, the probability of a transition over some time interval does not depend on the start time of the interval.</p>
+</div>
+</div>
+<p>In this chapter, we will only consider time-homogeneous Markov chains, i.e., whose dynamics are constant through time.</p>
+</section>
+<section id="holding-times" class="level3" data-number="4.1.2">
+<h3 data-number="4.1.2" class="anchored" data-anchor-id="holding-times"><span class="header-section-number">4.1.2</span> Holding times</h3>
+<p>Just like in the discrete-time case, thinking about the distribution of holding times (i.e., times between state transitions) is useful to understand what realisations from a continuous-time Markov process look like. Let <span class="math inline">\(D_i\)</span> be the holding time in state <span class="math inline">\(i\)</span>, i.e., the amount of time the process stays in state <span class="math inline">\(i\)</span> before switching to another state. Unlike in the discrete-time case, <span class="math inline">\(D_i\)</span> is a continuous variable here, defined over <span class="math inline">\([0, \infty)\)</span>. It turns out that the Markov property fully determines the distribution of holding times.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The holding time of a continuous-time Markov process follows an exponential distribution.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We first prove that that the dwell time is memoryless, i.e., <span class="math inline">\(\Pr(D_i &gt; s + t \mid D_i &gt; s) = \Pr(D_i &gt; t)\)</span>.</p>
+<p><span class="math display">\[
+\begin{aligned}
+\Pr(D_i &gt; s + t \mid D_i &gt; s) &amp; = \Pr(X_u = i \text{ for } u \in [0, s+t] \mid X_u = i \text{ for } u \in [0, s])\\
+&amp; = \Pr(X_u = i \text{ for } u \in [s, s+t] \mid X_u = i \text{ for } u \in [0, s])\\
+&amp; = \Pr(X_u = i \text{ for } u \in [s, s+t] \mid X_s = i) &amp;&amp; \text{(a)}\\
+&amp; = \Pr(X_u = i \text{ for } u \in [0, t] \mid X_0 = i) &amp;&amp; \text{(b)}\\
+&amp; = \Pr(D_i &gt; t),
+\end{aligned}
+\]</span> where (a) follows from the Markov property, and (b) follows from the time-homogeneity of the chain.<br>
+</p>
+<p>The exponential distribution is the only memoryless probability distribution with continuous support, and so the dwell time must be exponentially distributed. A proof of this special feature of the exponential distribution is for example presented in Section 5.2.2 of <span class="citation" data-cites="ross2019">Ross (<a href="#ref-ross2019" role="doc-biblioref">2019</a>)</span>.</p>
+</div>
+</div>
+</div>
+<p>This property does not tell us what the rate of the exponential distribution is, or how we determine what state to jump to at the end of the holding time, so we don’t yet have enough information to simulate from a continuous-time Markov chain. We will answer those questions in the next section.</p>
+<p><a href="#fig-ex-ctmc" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ex-ctmc</span></a> shows an example of a 2-state continuous-time Markov process with <span class="math inline">\(\mathcal{S} = \{0, 1\}\)</span>. The times between state transitions do not occur on a predefined grid like in the discrete-time case; instead, they can occur at any continuous time.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-ex-ctmc" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ex-ctmc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_markov_continuous_files/figure-html/fig-ex-ctmc-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ex-ctmc-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.1: Example realisation from a continuous-time Markov process with state space <span class="math inline">\(\mathcal{S} = \{ 0, 1 \}\)</span>, for <span class="math inline">\(t \in [0, 100]\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="model-specification" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="model-specification"><span class="header-section-number">4.2</span> Model specification</h2>
+<section id="transition-rates" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="transition-rates"><span class="header-section-number">4.2.1</span> Transition rates</h3>
+<p>Because time is now continuous, there is a no particular time grid of interest over which to define transition probabilities. However, because we know that the holding times follow an exponential distribution, the model can instead be specified in terms of two sets of parameters:</p>
+<ol type="1">
+<li>the rate parameter of the holding time distribution in each state <span class="math inline">\(i\)</span>;</li>
+<li>the probabilities of jumping from any state <span class="math inline">\(i\)</span> to any other state <span class="math inline">\(j \neq i\)</span>, <em>given that there is a transition</em>.</li>
+</ol>
+<p>With this in mind, a continuous-time Markov process can be described as follows. When the process enters some state <span class="math inline">\(i\)</span>, a waiting time is generated from an exponential distribution with rate parameter <span class="math inline">\(q_{ij} &gt; 0\)</span> for each other state <span class="math inline">\(j \neq i\)</span>, say <span class="math inline">\(D_{ij}\)</span>. Then, the process jumps to the state with the shortest waiting time (out of all the <span class="math inline">\(j \neq i\)</span>). The holding time before a transition is therefore <span class="math inline">\(D_i = \min \{ D_{ij} \}_{j \neq i}\)</span>, and it can be shown that it follows an exponential distribution (as required by the Markov property), with rate <span class="math inline">\(q_i = \sum_{j \neq i} q_{ij}\)</span> (proof in appendix). By property of the exponential distribution, the expected holding time in state <span class="math inline">\(i\)</span> is <span class="math inline">\(1/q_i\)</span>.</p>
+<p>Once we have generated a holding time <span class="math inline">\(D_i \sim \text{Exp}(q_i)\)</span>, then, how do we know which state to jump to after <span class="math inline">\(D_i\)</span>? When it leaves state <span class="math inline">\(i\)</span>, the process switches to the state with the minimum waiting time; for each state <span class="math inline">\(j \neq i\)</span>, this occurs with probability <span class="math display">\[
+\widetilde{P}_{ij} = \frac{q_{ij}}{\sum_{k \neq i} q_{ik}} = \frac{q_{ij}}{q_i}.
+\]</span> (The proof is in the appendix.) The discrete-time Markov chain with transition probabilities <span class="math inline">\(\widetilde{P}_{ij}\)</span> is called the embedded chain, or sometimes the skeleton of the continuous-time process.</p>
+<p>The dynamics of the process are therefore fully defined by the transition rates <span class="math inline">\(\{ q_{ij} \}_{i \neq j}\)</span>. A Markov process with finite state space of size <span class="math inline">\(\vert \mathcal{S} \vert = N\)</span> has <span class="math inline">\(N \times (N - 1)\)</span> such transition rates. It is convenient to write the transition rates in the form of a matrix where, by convention, the <span class="math inline">\(i^\text{th}\)</span> diagonal entry is set to <span class="math inline">\(q_{ii} = -q_i\)</span>, <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+-q_0 &amp; q_{01} &amp; q_{02} &amp; \cdots \\
+q_{10} &amp; -q_1 &amp; q_{12} &amp; \cdots \\
+q_{20} &amp; q_{21} &amp; -q_2 &amp; \cdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots
+\end{pmatrix}
+\]</span> such that the rows sum to zero: <span class="math inline">\(\sum_j q_{ij} = 0\)</span> for all <span class="math inline">\(i \in \mathcal{S}\)</span>. <span class="math inline">\(\boldsymbol{Q}\)</span> is called the <strong>transition rate matrix</strong>, or <strong>infinitesimal generator matrix</strong> of the process.</p>
+<p>We can represent a continuous-time Markov chain as a directed weighted graph, where the edges are weighted by the transition rates. Unlike the transition graphs of Chapter 2, a transition rate graph never has arrows from one state to itself.</p>
+<p><strong>Example:</strong> <a href="#fig-ctmc-graph" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-ctmc-graph</span></a> shows the transition rate graph of the continuous-time Markov chain with transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+-3 &amp; 1 &amp; 2 \\
+0 &amp; -1 &amp; 1 \\
+3 &amp; 1 &amp; -4
+\end{pmatrix}
+\]</span></p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-ctmc-graph" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ctmc-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div>
+<pre class="mermaid mermaid-js" data-label="fig-ctmc-graph">graph LR;
+a((a)) --&gt;|1| b((b))
+a --&gt;|2| c((c))
+b --&gt;|1| c 
+c --&gt;|3| a
+c --&gt;|1| b
+</pre>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ctmc-graph-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.2: Example transition rate graph of 3-state continuous-time Markov chain
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>The label of each edge gives the transition rate, and can be interpreted as the frequency of the given transition in the long run. In this model, transitions from “a” to “c” are twice as frequent as transitions from “a” to “b”, transitions from “b” to “a” are prohibited, and transitions from “c” to “a” are three times as frequent as from “c” to “b”.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.1
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>The general 2-state continuous-time Markov chain has transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+-\alpha &amp; \alpha \\
+\beta &amp; -\beta
+\end{pmatrix}
+\]</span> with <span class="math inline">\(\alpha, \beta \geq 0\)</span>. The process will switch between the two states, with holding times from Exp(<span class="math inline">\(\alpha\)</span>) in state 0, and from Exp(<span class="math inline">\(\beta\)</span>) in state 2.<br>
+</p>
+<p>The embedded discrete-time Markov chain has transition probability matrix <span class="math display">\[
+\widetilde{\boldsymbol{P}} =
+\begin{pmatrix}
+0 &amp; 1 \\
+1 &amp; 0
+\end{pmatrix}
+\]</span></p></li>
+<li><p>Consider the 3-state continuous-time Markov chain with transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+-3 &amp; 1 &amp; 2 \\
+1 &amp; -2 &amp; 1 \\
+0 &amp; 1 &amp; -1
+\end{pmatrix}
+\]</span></p>
+<p>Holding times are from Exp(3) in state 0, from Exp(2) in state 1, and from Exp(1) in state 2.The transition probability matrix of the embedded discrete-time Markov chain is <span class="math display">\[
+\widetilde{\boldsymbol{P}} =
+\begin{pmatrix}
+0 &amp; \frac{1}{3} &amp; \frac{2}{3} \\
+\frac{1}{2} &amp; 0 &amp; \frac{1}{2} \\
+0 &amp; 1 &amp; 0
+\end{pmatrix}
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="simulating-from-a-continuous-time-markov-process" class="level3" data-number="4.2.2">
+<h3 data-number="4.2.2" class="anchored" data-anchor-id="simulating-from-a-continuous-time-markov-process"><span class="header-section-number">4.2.2</span> Simulating from a continuous-time Markov process</h3>
+<p>We now know how to simulate from a continuous-time Markov chain, given a transition rate matrix. At each iteration, we generate waiting times for each possible transition from exponential distributions, and the next state is the one with the shortest waiting time.</p>
+<p>The following code simulates from a continuous-time Markov process with state space <span class="math inline">\(\{ 0, 1, 2 \}\)</span> and transition rate matrix <span class="math display">\[
+    \boldsymbol{Q} =
+    \begin{pmatrix}
+        -3 &amp; 1 &amp; 2 \\
+        0.5 &amp; -1 &amp; 0.5 \\
+        0.5 &amp; 1 &amp; -1.5
+    \end{pmatrix}
+\]</span> We also need a way to choose the initial state, and here we specify the initial distribution as <span class="math inline">\((0, 1, 0)\)</span>, i.e., such that <span class="math inline">\(X_0 = 1\)</span>. The algorithm runs until it reaches <span class="math inline">\(t = 10\)</span>.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Random seed for reproducibility</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">46012</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Setup parameters</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>tmax <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>u <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">3</span>, <span class="dv">1</span>, <span class="dv">2</span>,</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.5</span>, <span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>,</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.5</span>, <span class="dv">1</span>, <span class="sc">-</span><span class="fl">1.5</span>),</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Get tpm of embedded Markov chain</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> Q</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">diag</span>(P) <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>P <span class="ot">&lt;-</span> P <span class="sc">/</span> <span class="fu">rowSums</span>(P)</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Initialise process</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>X <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> u)</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>times <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>t <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Iterate until tmax is reached</span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="cf">while</span>(t <span class="sc">&lt;</span> tmax) {</span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Find current state</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a>    state <span class="ot">&lt;-</span> X[<span class="fu">length</span>(X)]</span>
+<span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Get relevant transition rates</span></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a>    rates <span class="ot">&lt;-</span> Q[state,]</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate holding time</span></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>    hold <span class="ot">&lt;-</span> <span class="fu">rexp</span>(<span class="at">n =</span> <span class="dv">1</span>, <span class="at">rate =</span> <span class="sc">-</span> rates[state])</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a>    t <span class="ot">&lt;-</span> t <span class="sc">+</span> hold</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a>    times <span class="ot">&lt;-</span> <span class="fu">c</span>(times, t)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a>    <span class="co"># Generate next state</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a>    next_state <span class="ot">&lt;-</span> <span class="fu">sample</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">size =</span> <span class="dv">1</span>, <span class="at">prob =</span> P[state,])</span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a>    X <span class="ot">&lt;-</span> <span class="fu">c</span>(X, next_state)</span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a><span class="fu">cbind</span>(<span class="at">time =</span> times, <span class="at">state =</span> X <span class="sc">-</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>         time state
+ [1,]  0.0000     1
+ [2,]  0.0328     0
+ [3,]  0.9036     2
+ [4,]  1.5036     1
+ [5,]  2.3095     0
+ [6,]  2.3215     2
+ [7,]  2.5936     1
+ [8,]  2.7502     2
+ [9,]  5.0843     1
+[10,]  6.1075     0
+[11,]  6.2490     2
+[12,]  6.6047     1
+[13,]  6.6405     2
+[14,]  6.7729     1
+[15,]  7.2082     2
+[16,]  7.3074     1
+[17,]  7.5605     0
+[18,]  7.6258     1
+[19,]  7.8005     2
+[20,]  7.8194     0
+[21,]  8.0623     2
+[22,]  8.4593     0
+[23,]  9.1294     2
+[24,]  9.5034     1
+[25,] 11.0512     0</code></pre>
+</div>
+</div>
+<p>The output is a sequence of transition times, and the states to which the process jumps. This is all we need to know the value of the process at any time <span class="math inline">\(t \in [0, 10]\)</span>.</p>
+</section>
+<section id="explosive-markov-chains" class="level3" data-number="4.2.3">
+<h3 data-number="4.2.3" class="anchored" data-anchor-id="explosive-markov-chains"><span class="header-section-number">4.2.3</span> Explosive Markov chains</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A continuous-time Markov chain is called <strong>explosive</strong> if an infinite number of transitions can happen in a finite amount of time.</p>
+</div>
+</div>
+<p>To illustrate this concept, consider the process defined over <span class="math inline">\(\mathcal{S} = \mathbb{N}\)</span>, with initial distribution <span class="math inline">\((1, 0, 0, \dots)\)</span>, and transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+-1 &amp; 1 &amp; \cdot &amp; \cdot &amp; \cdot \\
+\cdot &amp; -2 &amp; 2 &amp; \cdot &amp; \cdot \\
+\cdot &amp; \cdot &amp; -4 &amp; 4 &amp; \cdot \\
+\cdot &amp; \cdot &amp; \cdot &amp; \ddots &amp; \ddots \\
+\end{pmatrix}
+\]</span></p>
+<p>The chain starts in state 0, and then:</p>
+<ul>
+<li><p>it switches to 1 after a holding time from Exp(1);</p></li>
+<li><p>it switches to 2 after a holding time from Exp(2);</p></li>
+<li><p>it switches to 3 after a holding time from Exp(4);</p></li>
+</ul>
+<p>and so on.</p>
+<p>The holding times will be shorter and shorter, in such a way that an infinite number of transitions can occur in a finite amount of time. To see this mathematically, denote as <span class="math inline">\(T_n\)</span> the <span class="math inline">\(n^\text{th}\)</span> holding time, and <span class="math inline">\(S_n\)</span> the time of the <span class="math inline">\(n^\text{th}\)</span> transition (i.e., <span class="math inline">\(S_n = T_1 + T_2 + \cdots + T_n\)</span>). Then, <span class="math display">\[
+\begin{aligned}
+E[S_n] &amp; = E \left[ \sum_{k = 1}^n T_k\right] \\
+&amp; = \sum_{k = 1}^n E[T_k] \\
+&amp; = \sum_{k=0}^{n-1} \frac{1}{2^k}
+\end{aligned}
+\]</span> using the property that the expectation of an exponential random variable is the inverse of its rate. But <span class="math inline">\(\lim_{n \to \infty}E[S_n] = 2\)</span> is finite, so an arbitrarily large number of transitions are expected to have happened by <span class="math inline">\(t = 2\)</span>.</p>
+<p>In the following, we assume that the Markov processes are non-explosive. This is always the case for processes with finite state spaces; in the infinite case, we can ensure that <span class="math inline">\(\sup_i \{ q_i \} &lt; \infty\)</span>, i.e., the transition rates are bounded by a finite number.</p>
+</section>
+</section>
+<section id="behaviour-at-intermediate-time-scale" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="behaviour-at-intermediate-time-scale"><span class="header-section-number">4.3</span> Behaviour at intermediate time scale</h2>
+<section id="transition-probabilities" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="transition-probabilities"><span class="header-section-number">4.3.1</span> Transition probabilities</h3>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.4
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\((X_t)\)</span> be a homogeneous continuous-time Markov process. The <strong>transition probability</strong> from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span> over a time interval of length <span class="math inline">\(t \geq 0\)</span> is <span class="math display">\[
+P_{ij}(t) = \Pr(X_{s + t} = j \mid X_s = i),
+\]</span> i.e., it is the probability that the process will be in state <span class="math inline">\(j\)</span> after <span class="math inline">\(t\)</span> time units, given that it started in state <span class="math inline">\(i\)</span>.<br>
+</p>
+<p>For a given time interval <span class="math inline">\(t\)</span>, the transition probability matrix is <span class="math display">\[
+\boldsymbol{P}(t) =
+\begin{pmatrix}
+P_{00}(t) &amp; P_{01}(t) &amp; P_{02}(t) &amp; \cdots \\
+P_{10}(t) &amp; P_{11}(t) &amp; P_{12}(t) &amp; \cdots \\
+P_{20}(t) &amp; P_{21}(t) &amp; P_{22}(t) &amp; \cdots \\
+\vdots &amp; \vdots &amp; \vdots &amp; \ddots
+\end{pmatrix}
+\]</span></p>
+</div>
+</div>
+<p>For a continuous-time Markov process, the transition probabilities can only be defined with respect to some chosen time interval, as there is no predefined time grid. Each transition probability is therefore a function of time. These are <em>not</em> the same as the transition probabilities of the embedded discrete-time Markov chain, and we might use the phrase “transition probability function” to make the distinction. We will see that transition probability function can be evaluated for any time <span class="math inline">\(t\)</span> from the transition rates.</p>
+<p><strong>Remark:</strong> for any <span class="math inline">\(i \neq j\)</span>, we have <span class="math inline">\(P_{ij}(0) = 0\)</span> and <span class="math inline">\(P_{ii}(0) = 1\)</span>, so <span class="math inline">\(\boldsymbol{P}(0) = \boldsymbol{I}\)</span>.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.2
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Consider the 3-state continuous-time Markov chain with transition rate matrix <span class="math display">\[
+    \boldsymbol{Q} =
+    \begin{pmatrix}
+        -1 &amp; 0.5 &amp; 0.5 \\
+        1 &amp; -3 &amp; 2 \\
+        0.5 &amp; 1.5 &amp; -2
+    \end{pmatrix}
+\]</span></p>
+<p>The transition probability matrix of the embedded Markov chain is <span class="math display">\[
+    \boldsymbol{P} =
+    \begin{pmatrix}
+        0 &amp; \frac{1}{2} &amp; \frac{1}{2} \\
+        \frac{1}{3} &amp; 0 &amp; \frac{2}{3} \\
+        \frac{1}{4} &amp; \frac{3}{4} &amp; 0
+    \end{pmatrix}
+\]</span></p>
+<p>Let’s think about the interpretation of a particular transition probability function over some given time interval, say <span class="math inline">\(P_{01}(8.3)\)</span>. It measures the probability that the process starts in state 0 and ends up in state 1 (after 8.3 time units), accounting for all possible combinations and timings of transitions in between. Maybe the process jumped directly from 0 to 1, or maybe it also spent some time in state 2 during the interval. Maybe the last transition to state 1 occurred at <span class="math inline">\(t = 8\)</span>, or maybe it occurred at <span class="math inline">\(t = 6.8\)</span>. As you can see (and in contrast with the discrete-time setting), the probability <span class="math inline">\(P_{01}(8.3)\)</span> has to account for an infinite number of possible sequence of events.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.2 (Chapman-Kolmogorov equation)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(\boldsymbol{P}(t)\)</span> denotes the transition probability matrix of a continuous-time Markov process over a time interval of length <span class="math inline">\(t\)</span>, then we have <span class="math display">\[
+\boldsymbol{P}(s + t)  = \boldsymbol{P}(s) \boldsymbol{P}(t)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The proof is identical to the discrete-time case: <span class="math display">\[
+\begin{aligned}
+P_{ij}(s+t) &amp; = \Pr(X_{s+t} = j \mid X_0 = i) &amp;&amp;\\
+&amp; = \sum_{k \in \mathcal{S}} \Pr(X_{s+t} = j, X_s = k \mid X_0 = i) &amp;&amp; \text{(a)} \\
+&amp; = \sum_{k \in \mathcal{S}} \Pr(X_{s+t} = j \mid X_s = k, X_0 = i) \Pr(X_s = k \mid X_0 = i) &amp;&amp; \text{(b)} \\
+&amp; = \sum_{k \in \mathcal{S}} \Pr(X_{s+t} = j \mid X_s = k) \Pr(X_s = k \mid X_0 = i) &amp;&amp; \text{(c)} \\
+&amp; = \sum_{k \in \mathcal{S}} P_{kj}(t) P_{ik}(s) \\
+&amp; = [\boldsymbol{P}(s) \boldsymbol{P}(t)]_{ij}
+\end{aligned}
+\]</span> where (a) is the law of total probability, (b) is the definition of conditional probability, and (c) is the Markov property.</p>
+</div>
+</div>
+</div>
+<!-- See Matt Aldridge's notes on this: https://mpaldridge.github.io/math2750/S18-forward-backward.html -->
+<p>Because the transition probabilities are continuous functions of time, we can study them using tools from analysis. In fact, we can derive differential equations to describe the dynamics of the distribution of the chain through time. But first, we need the following result, which links each transition probability function to a transition rate.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.3
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The transition probability functions and transition rates satisfy <span class="math display">\[
+\lim_{h \to 0^+} \frac{P_{ij}(h)}{h} = q_{ij}\quad
+    \text{and}\quad
+    \lim_{h \to 0^+} \frac{1 - P_{ii}(h)}{h} = q_{i}.
+\]</span></p>
+<p>Denoting as <span class="math inline">\(P_{ij}'\)</span> the derivative of <span class="math inline">\(P_{ij}\)</span>, we can also write this as <span class="math display">\[
+    q_{ij} = P_{ij}'(0)\quad \text{and}\quad q_i = 1 - P_{ii}'(0)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We will only prove the first part of the proposition, but the second part follows a similar reasoning.<br>
+</p>
+<p>We consider the probability of jumping from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> over a short time interval of length <span class="math inline">\(h\)</span>. This requires two independent events: (1) that the holding time in state <span class="math inline">\(i\)</span> is shorter than <span class="math inline">\(h\)</span>, and (2) that, once the process jumps, it jumps to state <span class="math inline">\(j\)</span>. Things are a little more complex because there could be more than one jump, but the probability of that is <span class="math inline">\(o(h)\)</span> (i.e., very small for short time intervals).<br>
+</p>
+<p>Let <span class="math inline">\(D_i\)</span> be the holding time in state <span class="math inline">\(i\)</span>, and <span class="math inline">\(\widetilde{P}_{ij}\)</span> the transition probability from <span class="math inline">\(i\)</span> to <span class="math inline">\(j\)</span> conditional on a jump (as defined in Section 4.2.1). We can rewrite the transition probability function as <span class="math display">\[
+\begin{aligned}
+    P_{ij}(h) &amp; = \Pr(X_h = j \mid X_0 = i) &amp;&amp; \\
+        &amp; = \Pr(D_i \leq h) \widetilde{P}_{ij} + o(h) &amp;&amp; \\
+        &amp; = (1 - e^{-q_i h}) \frac{q_{ij}}{q_i} + o(h) &amp;&amp; \text{(a)}\\
+        &amp; = (1 - [1 - q_i h + o(h)]) \frac{q_{ij}}{q_i} + o(h) &amp;&amp; \text{(b)} \\
+        &amp; = q_{ij} h + o(h), &amp;&amp; \text{(c)} \\
+\end{aligned}
+\]</span> where (a) uses the cumulative distribution function of the exponential distribution, (b) uses the Taylor expansion of the exponential function, and (c) uses the fact that <span class="math inline">\(k \times o(h) = o(h)\)</span> for any constant <span class="math inline">\(k\)</span>.<br>
+</p>
+<p>Because <span class="math inline">\(o(h)/h\)</span> tends to zero as <span class="math inline">\(h \to 0\)</span>, we can now compute the required limit as <span class="math display">\[
+\begin{aligned}
+    \lim_{h \to 0} \frac{P_{ij}(h)}{h} &amp; = \lim_{h \to 0} \left\{ \frac{q_{ij} h + o(h)}{h} \right\} \\
+        &amp; = q_{ij}.
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<p>Note that this proof provides an alternative definition of the transition rates, through the relationships <span class="math display">\[
+\begin{cases}
+    P_{ij}(h) = q_{ij} h + o(h) \\
+    P_{ii}(h) = 1 - q_{i} h + o(h)
+\end{cases}
+\]</span> Some books present continuous-time Markov chains first using the transition probability functions, and then define the rates using this formula. This is similar to the second (“little-o”) definition of Poisson processes that we saw in Chapter 3, and it says that, over a short time interval <span class="math inline">\(h\)</span>, the probability of jumping from state <span class="math inline">\(i\)</span> to state <span class="math inline">\(j\)</span> is approximately proportional to the transition rate <span class="math inline">\(q_{ij}\)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.4 (Kolmogorov equations)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If we denote as <span class="math inline">\(\boldsymbol{P}'\)</span> the matrix with elements <span class="math inline">\(P_{ij}' = dP_{ij}/dt\)</span>, we have the two following relationships.<br>
+</p>
+<p><strong>Forward equation:</strong> <span class="math display">\[
+\boldsymbol{P}'(t) = \boldsymbol{P}(t) \boldsymbol{Q}
+\]</span></p>
+<p><strong>Backward equation:</strong> <span class="math display">\[
+\boldsymbol{P}'(t) = \boldsymbol{Q} \boldsymbol{P}(t)
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>To prove the forward equation, we look at the range of change of the transition probability function over a short time interval.</p>
+<p><span class="math display">\[
+\begin{aligned}
+    \frac{P_{ij}(t + h) - P_{ij}(t)}{h}
+        &amp; = \frac{1}{h} \left\{ \sum_{k \in \mathcal{S}} P_{ik}(t) P_{kj}(h) - P_{ij}(t) \right\} &amp;&amp; \text{(a)}\\
+        &amp; = \frac{1}{h} \left\{ P_{ij}(t) P_{jj}(h) + \sum_{k \neq j} P_{ik}(t) P_{kj}(h)  - P_{ij}(t) \right\} &amp;&amp; \text{(b)} \\
+        &amp; = \frac{1}{h} \left\{ P_{ij}(t) [P_{jj}(h) - 1] + \sum_{k \neq j} P_{ik}(t) P_{kj}(h) \right\} &amp;&amp; \text{(c)} \\
+        &amp; = P_{ij}(t) \frac{P_{jj}(h) - 1}{h} + \sum_{k \neq j} P_{ik}(t) \frac{P_{kj}(h)}{h},
+\end{aligned}
+\]</span> where (a) is the Chapman-Kolmogorov equation, (b) takes the <span class="math inline">\(k = j\)</span> term out of the sum, and (c) factorises the <span class="math inline">\(P_{ij}\)</span> terms.<br>
+</p>
+<p>Taking the limit as <span class="math inline">\(h \to 0\)</span> on both sides, and using the definition <span class="math inline">\(q_{jj} = - q_j\)</span>, we find <span class="math display">\[
+\begin{aligned}
+    P_{ij}'(t) &amp; = - q_j P_{ij}(t) + \sum_{k \neq j} q_{kj} P_{ik}(t) \\
+        &amp; = \sum_{k \in \mathcal{S}} q_{kj} P_{ik}(t) \\
+        &amp; = [\boldsymbol{P}(t) \boldsymbol{Q}]_{ij}.
+\end{aligned}
+\]</span></p>
+<p>The proof of the backward equation is almost identical, except it starts from <span class="math inline">\(P_{ij}(t + h) = \sum_{k \in \mathcal{S}} P_{ik}(h) P_{kj}(t)\)</span>.<br>
+</p>
+<p>Note that the last part of this proof requires <span class="math inline">\(q_{jj} = - q_j\)</span>, which explains why we used that convention to begin with: it allows a convenient matrix form for these formulas.</p>
+</div>
+</div>
+</div>
+<p>The Kolmogorov equations are differential equations with a familiar form; the scalar analogue is <span class="math inline">\(f'(t) = q f(t)\)</span>. Like in the scalar case, only one function satisfies this equation: the exponential. This gives us a convenient relationship between the transition probability functions and the generator matrix of a continuous-time Markov chain.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a continuous-time Markov chain with transition function <span class="math inline">\(\boldsymbol{P}(t)\)</span> and generator matrix <span class="math inline">\(\boldsymbol{Q}\)</span>. We have <span class="math display">\[
+\boldsymbol{P}(t) = \exp(t \boldsymbol{Q}).
+\]</span></p>
+</div>
+</div>
+<p>In other words, by definition of the matrix exponential, <span class="math display">\[
+\boldsymbol{P}(t) = \sum_{n=0}^\infty \frac{1}{n!} (t \boldsymbol{Q})^n = \boldsymbol{I} + t \boldsymbol{Q} + \frac{t^2}{2} \boldsymbol{Q}^2 + \frac{t^3}{6} \boldsymbol{Q}^3 + \cdots,
+\]</span> which is, in general, <em>not</em> the same as taking the exponential of each element in <span class="math inline">\(t \boldsymbol{Q}\)</span>.</p>
+<p>This is a very important result, as it gives a direct way to compute the transition probabilities of a continuous-time process over any time interval, in terms of the transition rate matrix. As required, this formula accounts for all possible sequence of events during that interval.</p>
+<p>Computing matrix exponentials with high accuracy is a difficult general problem in numerical analysis, but we won’t worry about it here. There are many efficient algorithms, e.g., implemented in the R function <code>expm()</code> (from the eponymous package), and those work fine for our purposes.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.3
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We return to the 3-state continuous-time Markov chain from a previous example, with transition rate matrix <span class="math display">\[
+    \boldsymbol{Q} =
+    \begin{pmatrix}
+        -1 &amp; 0.5 &amp; 0.5 \\
+        1 &amp; -3 &amp; 2 \\
+        0.5 &amp; 1.5 &amp; -2
+    \end{pmatrix}
+\]</span></p>
+<p>Using R, compute <span class="math inline">\(\boldsymbol{P}(1)\)</span>, <span class="math inline">\(\boldsymbol{P}(2)\)</span>, and <span class="math inline">\(\boldsymbol{P}(5)\)</span>.<br>
+</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load library for matrix exponential</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(expm)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Define transition rate matrix</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>Q <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="sc">-</span><span class="dv">1</span>, <span class="fl">0.5</span>, <span class="fl">0.5</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>              <span class="dv">1</span>, <span class="sc">-</span><span class="dv">3</span>, <span class="dv">2</span>,</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>              <span class="fl">0.5</span>, <span class="fl">1.5</span>, <span class="sc">-</span><span class="dv">2</span>),</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>            <span class="at">nrow =</span> <span class="dv">3</span>, <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Compute transition probability matrices</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="fu">expm</span>(<span class="dv">1</span> <span class="sc">*</span> Q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1]  [,2]  [,3]
+[1,] 0.522 0.203 0.275
+[2,] 0.357 0.270 0.374
+[3,] 0.324 0.268 0.408</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">expm</span>(<span class="dv">2</span> <span class="sc">*</span> Q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1]  [,2]  [,3]
+[1,] 0.434 0.234 0.332
+[2,] 0.403 0.245 0.351
+[3,] 0.397 0.247 0.356</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">expm</span>(<span class="dv">5</span> <span class="sc">*</span> Q)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      [,1]  [,2]  [,3]
+[1,] 0.414 0.241 0.345
+[2,] 0.414 0.241 0.345
+[3,] 0.414 0.241 0.345</code></pre>
+</div>
+</div>
+<p><br>
+</p>
+<p>We can make a few observations:</p>
+<ul>
+<li>as expected, the rows of the transition probability matrices sum to 1;</li>
+<li>similarly to the discrete-time case, the transition probabilities over long time intervals seem to converge to some distribution.</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section id="marginal-distribution" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="marginal-distribution"><span class="header-section-number">4.3.2</span> Marginal distribution</h3>
+<p>The marginal distribution of <span class="math inline">\(X_t\)</span> is the probability distribution <span class="math inline">\(\boldsymbol{u}(t) = (u_1(t), u_2(t), \dots)\)</span> defined by <span class="math display">\[
+    u_{j}(t) = \Pr(X_t = j),\quad \text{for all } j \in \mathcal{S}.
+\]</span></p>
+<p>Like in discrete time, we can use the law of total probability to rewrite this as <span class="math display">\[
+\begin{aligned}
+    u_j(t) &amp; = \sum_{i \in \mathcal{S}} \Pr(X_t = j \mid X_0 = i) \Pr(X_0 = i) \\
+        &amp; = \sum_{i \in \mathcal{S}} P_{ij}(t) u_i(0) \\
+        &amp; = [\boldsymbol{u}(0) \boldsymbol{P}(t)]_j
+\end{aligned}
+\]</span></p>
+<p>Finally, given the initial distribution <span class="math inline">\(\boldsymbol{u}(0)\)</span> and the transition rate matrix <span class="math inline">\(\boldsymbol{Q}\)</span>, the distribution of <span class="math inline">\(X_t\)</span> can then be computed as <span class="math display">\[
+\begin{aligned}
+    \boldsymbol{u}(t) &amp; = \boldsymbol{u}(0) \boldsymbol{P}(t) \\
+        &amp; = \boldsymbol{u}(0) \exp(t \boldsymbol{Q}).
+\end{aligned}
+\]</span></p>
+</section>
+</section>
+<section id="first-step-analysis" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="first-step-analysis"><span class="header-section-number">4.4</span> First step analysis</h2>
+<p>We may be interested in the hitting probabilities and mean hitting times of a continuous-time Markov chain, particularly if it has absorbing states.</p>
+<p>The study of hitting probabilities in continuous time is based on the observation that the probabilities do not depend on the time spent in each state, but only on the transition probabilities of the embedded chain. That is, the hitting probabilities of the continuous-time Markov chain are equal to the hitting probabilities of the embedded chain, and we can use results from Chapter 2 to compute them.</p>
+<p>For convenience, we provide an alternative statement in terms of transition rates directly.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.6
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The hitting probabilities <span class="math inline">\(f_{iA} = \Pr(\tau_A &lt; \infty \mid X_0 = i), i \in \{ 1, \dots, N\}\)</span>, satisfy <span class="math display">\[
+    \begin{cases}
+        f_{iA} = 1 &amp; \text{for } i \in A \\
+        \sum_{j \in \mathcal{S}} q_{ij} f_{jA} = 0 &amp; \text{for } i \notin A.
+    \end{cases}
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-18" class="callout-18-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For <span class="math inline">\(i \notin A\)</span>, we apply the results of Chapter 2 to the embedded chain, <span class="math display">\[
+    f_{iA} = \sum_{j \in \mathcal{S}} \widetilde{P}_{ij} f_{jA}
+\]</span> where <span class="math inline">\(\widetilde{P}_{ij} = q_{ij}/q_i\)</span> for <span class="math inline">\(i \neq j\)</span>, and <span class="math inline">\(\widetilde{P}_{ii} = 0\)</span>. So, <span class="math display">\[
+\begin{aligned}
+    &amp; f_{iA} = \sum_{j \neq i} \frac{q_{ij}}{q_i} f_{jA} \\
+    \Rightarrow\quad &amp; q_i f_{iA} = \sum_{j \neq i} q_{ij} f_{jA} \\
+    \Rightarrow\quad &amp; - q_{ii} f_{iA} = \sum_{j \neq i} q_{ij} f_{jA} \\
+    \Rightarrow\quad &amp; \sum_{j \in \mathcal{S}} q_{ij} f_{jA} = 0. \\
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-19-contents" aria-controls="callout-19" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.4: computing hitting probabilities
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-19" class="callout-19-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Find the hitting probabilities for state 0 in the continuous-time Markov chain with rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+    0 &amp; 0 &amp; 0 &amp; 0 \\
+    1 &amp; -6 &amp; 5 &amp; 0 \\
+    0 &amp; 2 &amp; -3 &amp; 1 \\
+    0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>We know that <span class="math inline">\(f_{00} = 1\)</span> (if the process starts in state 0, it is guaranteed to visit state 0), and <span class="math inline">\(f_{30} = 0\)</span> (because state 3 is absorbing), so we use the formulas above to find <span class="math inline">\(f_{10}\)</span> and <span class="math inline">\(f_{20}\)</span>.</p>
+<p>Applying the proposition for <span class="math inline">\(i = 1\)</span> and <span class="math inline">\(i = 2\)</span>, we find the system of equations <span class="math display">\[
+\begin{aligned}
+    &amp; \begin{cases}
+        \sum_{j = 0}^3 q_{1j} f_{j0} = 0 \\
+        \sum_{j = 0}^3 q_{2j} f_{j0} = 0
+    \end{cases} \\[3mm]
+    \Rightarrow\quad &amp; \begin{cases}
+        1 - 6 f_{10} + 5 f_{20} = 0 \\
+        2 f_{10} - 3 f_{20} = 0
+    \end{cases} \\[3mm]
+    \Rightarrow\quad &amp; \begin{cases}
+        1 - 6 f_{10} + \frac{10}{3} f_{10} = 0 \\
+        f_{20} = \frac{2}{3} f_{10}
+    \end{cases} \\[3mm]
+    \Rightarrow\quad &amp; \begin{cases}
+        f_{10} = \frac{3}{8} \\
+        f_{20} = \frac{2}{8}
+    \end{cases}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<p>The mean hitting times cannot be directly computed from the embedded chain in a similar way, because the holding times (between transitions) are important. It is still possible to derive an analogous relationship to compute mean hitting times from the transition rates.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The mean hitting times <span class="math inline">\(T_{iA} = E[\tau_A \mid X_0 = i]\)</span> satisfy <span class="math display">\[
+    \begin{cases}
+        T_{iA} = 0 &amp; \text{for } i \in A \\
+        - \sum_{j \in \mathcal{S}} q_{ij} T_{jA} = 1 &amp; \text{for } i \notin A
+    \end{cases}
+\]</span></p>
+</div>
+</div>
+<!-- Adapted from Norris p 113 -->
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-21-contents" aria-controls="callout-21" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-21" class="callout-21-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\(D\)</span> denote the time of the first transition of the process, and <span class="math inline">\((\widetilde{X}_n)\)</span> be the discrete-time embedded Markov chain. If <span class="math inline">\(X_0 = i \notin A\)</span>, then <span class="math inline">\(\tau_A \geq D\)</span> and <span class="math display">\[
+E[\tau_A - J \mid \widetilde{X}_1 = j] = E[\tau_A \mid X_0 = j] = T_{jA}.
+\]</span></p>
+<p>Then, we have <span class="math display">\[
+\begin{aligned}
+    T_{iA} &amp; = E[\tau_A \mid X_0 = i] \\
+        &amp; = E[J \mid X_0 = i] + E[\tau_A - J \mid X_0 = i] \\
+        &amp; = \frac{1}{q_i} + \sum_{j \neq i} E[\tau_A - J \mid \widetilde{X}_1 = j] \Pr(\widetilde{X}_1 = j \mid X_0 = i) \\
+        &amp; = \frac{1}{q_i} + \sum_{j \neq i} T_{jA} \widetilde{P}_{ij} \\
+        &amp; = \frac{1}{q_i} + \sum_{j \neq i}  \frac{q_{ij}}{q_i} T_{jA}
+\end{aligned}
+\]</span> such that <span class="math display">\[
+\begin{aligned}
+    &amp; q_i T_{iA} = 1 + \sum_{j \neq i} q_{ij} T_{jA} \\
+    \Rightarrow\quad &amp;  - q_{ii} T_{iA} = 1 + \sum_{j \neq i} q_{ij} T_{jA} \\
+    \Rightarrow\quad &amp;  - \sum_{j \in \mathcal{S}} q_{ij} T_{jA} = 1
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-22-contents" aria-controls="callout-22" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.5: computing mean hitting time
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-22" class="callout-22-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Compute the mean hitting times for <span class="math inline">\(A = \{0, 3\}\)</span> in the continuous-time Markov chain with transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+    0 &amp; 0 &amp; 0 &amp; 0 \\
+    1 &amp; -6 &amp; 5 &amp; 0 \\
+    0 &amp; 2 &amp; -3 &amp; 1 \\
+    0 &amp; 0 &amp; 0 &amp; 0
+\end{pmatrix}
+\]</span></p>
+<p>We start from <span class="math inline">\(T_{0A} = T_{3A} = 0\)</span>, and use the proposition with <span class="math inline">\(i = 1\)</span> and <span class="math inline">\(i = 2\)</span> to find <span class="math display">\[
+\begin{aligned}
+    &amp; \begin{cases}
+        - \sum_{j \in \mathcal{S}} q_{1j} T_{jA} = 1 \\
+        - \sum_{j \in \mathcal{S}} q_{2j} T_{jA} = 1 \\
+    \end{cases} \\[3mm]
+    \Rightarrow\quad &amp; \begin{cases}
+        6 T_{1A} - 5 T_{2A} = 1 \\
+        -2 T_{1A} + 3 T_{2A} = 1
+    \end{cases} \\[3mm]
+    \Rightarrow\quad &amp; \begin{cases}
+        6 T_{1A} - \frac{5}{3} - \frac{10}{3} T_{1A} = 1 \\
+        T_{2A} = \frac{1}{3} + \frac{2}{3} T_{1A}
+    \end{cases} \\[3mm]
+    \Rightarrow\quad &amp; \begin{cases}
+        T_{1A}= 1 \\
+        T_{2A} = 1
+    \end{cases}
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="long-term-behaviour" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="long-term-behaviour"><span class="header-section-number">4.5</span> Long-term behaviour</h2>
+<!-- See Lam's notes and Section 7.4 of the Dobrow book -->
+<p>Like for their discrete-time counterparts, we are often interested in the long-term properties of continuous-time Markov chains, and in particular the convergence of the distribution of the process to some limit. Many discrete-time results have a continuous-time version, and we go over them more briefly in this chapter.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.5
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Consider a continuous-time Markov process <span class="math inline">\((X_t)\)</span> with transition probability function <span class="math inline">\(\boldsymbol{P}(t)\)</span>. The probability distribution <span class="math inline">\(\boldsymbol\pi\)</span> is a <strong>stationary distribution</strong> of <span class="math inline">\((X_t)\)</span> if, for all <span class="math inline">\(t \geq 0\)</span>, <span class="math display">\[
+\boldsymbol\pi = \boldsymbol\pi \boldsymbol{P}(t)
+\]</span></p>
+</div>
+</div>
+<p>It is usually more useful to rewrite this definition in terms of the transition rates, rather than the transition probabilities.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.8
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The distribution <span class="math inline">\(\boldsymbol\pi\)</span> is a stationary distribution of the Markov chain with generator matrix if and only if <span class="math display">\[
+\boldsymbol\pi \boldsymbol{Q} = \boldsymbol{0}.
+\]</span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-25-contents" aria-controls="callout-25" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-25" class="callout-25-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<!-- See Dobrow book, p 286 -->
+<!-- but this is adapted from David Anderson's lecture notes, p 142 -->
+<p>To prove the equivalence, we prove each implication separately: (1) <span class="math inline">\(\boldsymbol{\pi Q} = \boldsymbol{0} \Rightarrow \boldsymbol\pi \boldsymbol{P}(t) = \boldsymbol\pi\)</span>, and (2) <span class="math inline">\(\boldsymbol\pi \boldsymbol{P}(t) = \boldsymbol\pi \Rightarrow \boldsymbol{\pi Q} = \boldsymbol{0}\)</span>.<br>
+</p>
+<ol type="1">
+<li><p>Assume that there exists a distribution <span class="math inline">\(\boldsymbol\pi\)</span> such that <span class="math inline">\(\boldsymbol{\pi Q} = \boldsymbol{0}\)</span>. If we take Kolmogorov’s backward equation, and multiply each side by <span class="math inline">\(\boldsymbol\pi\)</span>, we get <span class="math display">\[
+\begin{aligned}
+&amp; \boldsymbol{P}'(t) = \boldsymbol{QP}(t) \\
+\Rightarrow\ &amp; \boldsymbol\pi \boldsymbol{P}'(t) = \boldsymbol{\pi Q P}(t) \\
+\Rightarrow\ &amp; \boldsymbol\pi \boldsymbol{P}'(t) = \boldsymbol{0}, \\
+\end{aligned}
+\]</span> where the last step uses the assumption that <span class="math inline">\(\boldsymbol{\pi Q} = \boldsymbol{0}\)</span>. So, we have <span class="math display">\[
+\frac{d}{dt}\boldsymbol{\pi P}(t) = \boldsymbol{0},
+\]</span> i.e., <span class="math inline">\(\boldsymbol{\pi P}(t)\)</span> is constant with respect to <span class="math inline">\(t\)</span>. But we also know that <span class="math inline">\(\boldsymbol{P}(0) = \boldsymbol{I}\)</span>, so <span class="math inline">\(\boldsymbol{\pi P}(t) = \boldsymbol{\pi P}(0) = \boldsymbol\pi\)</span> for all <span class="math inline">\(t \geq 0\)</span>, as required.<br>
+</p></li>
+<li><p>Assume that there exists a distribution <span class="math inline">\(\boldsymbol\pi\)</span> such that <span class="math inline">\(\boldsymbol{\pi P}(t) = \boldsymbol\pi\)</span> for all <span class="math inline">\(t \geq 0\)</span>. So, for any <span class="math inline">\(h &gt; 0\)</span>, we have <span class="math display">\[
+\begin{aligned}
+&amp; \boldsymbol{\pi P}(h) = \boldsymbol{\pi} \\
+\Rightarrow\ &amp; \boldsymbol{\pi} (\boldsymbol{P}(h) - \boldsymbol{I}) = \boldsymbol{0} \\
+\Rightarrow\ &amp; \boldsymbol{\pi} \left( \frac{\boldsymbol{P}(h) - \boldsymbol{I}}{h} \right) = \boldsymbol{0} \\
+\Rightarrow\ &amp; \boldsymbol{\pi} \left( \frac{\boldsymbol{P}(h) - \boldsymbol{P}(0)}{h} \right) = \boldsymbol{0} \\
+\end{aligned}
+\]</span> Taking the limit as <span class="math inline">\(h \to 0\)</span>, we find <span class="math display">\[
+\begin{aligned}
+&amp; \boldsymbol{\pi P}'(0) = \boldsymbol{0} \\
+\Rightarrow\ &amp; \boldsymbol{\pi P}(0) \boldsymbol{Q} = \boldsymbol{0} &amp;&amp; \text{(a)} \\
+\Rightarrow\ &amp; \boldsymbol{\pi Q} = \boldsymbol{0}, &amp;&amp; \text{(b)}
+\end{aligned}
+\]</span> where (a) uses the Kolmogorov forward equation, and (b) follows from the assumption that <span class="math inline">\(\boldsymbol{\pi P}(t) = \boldsymbol\pi\)</span>.<br>
+</p></li>
+</ol>
+<p>Finally, we have shown the equivalence.</p>
+</div>
+</div>
+</div>
+<p>This last result gives us a practical method to find the stationary distribution of a continuous-time Markov process based on its transition rate matrix, by solving a system of linear equations.</p>
+<p>Now that we have defined what a stationary distribution distribution is, we turn to its connection to the long-term behaviour of the chain in the following two theorems. The properties of communication, irreducibility, transience and recurrence are defined in the same way as for discrete-time chains; and note that periodicity does not exist in continuous time.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.9
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Fundamental limit theorem in Dobrow book, p 285 -->
+<!-- See also Theorem 3.6.2 of Norris book, which includes proof -->
+<p>Let <span class="math inline">\((X_t)\)</span> be an finite, irreducible continuous-time Markov chain with transition function <span class="math inline">\(\boldsymbol{P}(t)\)</span>. Then, there exists a unique stationary distribution <span class="math inline">\(\boldsymbol\pi\)</span>, which is the limiting distribution. That is, for all <span class="math inline">\(i, j \in \mathcal{S}\)</span>, <span class="math display">\[
+\lim_{t \to \infty} P_{ij}(t) = \pi_j.
+\]</span></p>
+</div>
+</div>
+<p>This limit theorem explains the phenomenon observed in a previous example that each row of <span class="math inline">\(\boldsymbol{P}(t)\)</span> seems to converge to the same distribution as <span class="math inline">\(t \to \infty\)</span>. It offers an alternative, pragmatic method to compute the stationary/limiting distribution of an irreducible continuous-time Markov process: compute <span class="math inline">\(\exp(t \boldsymbol{Q})\)</span> for some large <span class="math inline">\(t\)</span>.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.10
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<!-- Adapted from David Anderson's lecture notes, p 147, which mentions Rednick for a proof -->
+<!-- See also Norris book, Theorem 3.8.1 (p 126), with a proof -->
+<p>Let <span class="math inline">\((X_t)\)</span> be an irreducible, positive recurrent continuous-time Markov chain with unique stationary distribution <span class="math inline">\(\boldsymbol\pi\)</span>. Then, for any <span class="math inline">\(i \in \mathcal{S}\)</span>, the long-run proportions converge almost surely to <span class="math inline">\(\boldsymbol\pi\)</span>, i.e., <span class="math display">\[
+\Pr \left( \lim_{t \to \infty} \frac{1}{t} \int_{0}^t \mathbb{I}_{\{X_s = i\}}\ ds = \pi_i \right) = 1.
+\]</span></p>
+</div>
+</div>
+<p>So, like in the discrete-time case, the stationary distribution gives the long-run proportion of time spent in each state.</p>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-28-contents" aria-controls="callout-28" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.6
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-28" class="callout-28-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We use continuous-time Markov chains to model the behavioural states of an animal (e.g., “eating”, “resting”). Let’s say that pandas have three behavioural states, 0 = “resting”, 1 = “eating” , and 2 = “travelling”, and that they jump between them at the following rates: <span class="math display">\[
+    \boldsymbol{Q} =
+    \begin{pmatrix}
+        - 3 &amp; 2 &amp; 1 \\
+        5 &amp; - 20 &amp; 15 \\
+        6 &amp; 2 &amp; -8
+    \end{pmatrix}
+\]</span> where time is measured in days. Looking at the diagonal elements, we see that, on average, pandas rest for 24/3 = 8 h, eat for 24/20 = 1.2 h, and travel for 24/8 = 3 h before jumping to another activity.<br>
+</p>
+<p>Compute the proportion of time that pandas spend in each behavioural state in the long term. (This is often called the “activity budget” by biologists.)<br>
+</p>
+<p>We can rewrite <span class="math inline">\(\boldsymbol{\pi Q} = \boldsymbol{0}\)</span> as the system of equations <span class="math display">\[
+\begin{cases}
+    -3 \pi_0 + 5\pi_1 + 6 \pi_2 = 0 &amp; \text{(A)}\\
+    2 \pi_0 - 20 \pi_1 + 2 \pi_2 = 0 &amp; \text{(B)}\\
+    \pi_0 + 15 \pi_1 - 8 \pi_2 = 0 &amp; \text{(C)}
+\end{cases}
+\]</span></p>
+<p>Note that the equations are not linearly independent, because <span class="math inline">\(\text{(A)} = -(\text{(B)} + \text{(C)})\)</span>, but we can replace one of them by the constraint <span class="math inline">\(\pi_0 + \pi_1 + \pi_2 = 1\)</span>. Solving these equations, either by hand or using a computer (e.g., <code>solve()</code> in R), we find <span class="math display">\[
+\begin{cases}
+    \pi_0 = \frac{65}{99} \approx 0.657 \\
+    \pi_1 = \frac{1}{11} \approx 0.091 \\
+    \pi_2 = \frac{25}{99} \approx 0.253
+\end{cases}
+\]</span></p>
+<p>That is, pandas spend approximately 66% of their time sleeping, 9% of their time eating, and 25% of their time travelling.</p>
+</div>
+</div>
+</div>
+<p>In R, the function <code>solve()</code> can be used to solve for <span class="math inline">\(\boldsymbol{x}\)</span> in linear equations of the form <span class="math inline">\(\boldsymbol{Ax} = \boldsymbol{b}\)</span>, where <span class="math inline">\(\boldsymbol{x}\)</span> and <span class="math inline">\(\boldsymbol{b}\)</span> are vectors of length <span class="math inline">\(N\)</span>, and <span class="math inline">\(\boldsymbol{A}\)</span> is an <span class="math inline">\(N \times N\)</span> matrix. You should think about how a system of equations like the one in the example above can be rewritten in this form (i.e., what form <span class="math inline">\(\boldsymbol{A}\)</span> and <span class="math inline">\(\boldsymbol{b}\)</span> take).</p>
+<!-- ## Some special cases
+
+### Birth-death process -->
+<!-- See Lam's notes and Section 7.5 of the Dobrow book -->
+<!-- A birth-death process is a continuous-time Markov chain with state space $\mathcal{S} = \{ 0, 1, 2, \dots \}$, which models the number of individuals in a population. As the name suggests, the dynamics of the process is defined by two phenomena, whose rates can depend on the population size: a birth increases the population by 1, and a death decreases it by 1. We can view this model as a continuous-time Markov chain with generator matrix
+$$
+\boldsymbol{Q} =
+\begin{pmatrix}
+- q_0 & q_{01} & 0 & 0 & \cdots \\
+q_{10} & -q_1 & q_{12} & 0 & \cdots \\
+0 & q_{21} & - q_2 & q_{23} & \cdots \\
+0 & 0 & q_{32} & -q_3 & \cdots \\
+\vdots & \vdots & \vdots & \vdots & \ddots
+\end{pmatrix}
+$$
+where, for a population of size $n > 0$, 
+
+- $q_{n,n+1}$ is the birth rate, i.e., the rate of transitions from $n$ to $n + 1$;
+- $q_{n, n-1}$ is the death rate, i.e., the rate of transitions from $n$ to $n - 1$;
+- $q_n = q_{n,n-1} + q_{n,n-1}$ is the rate of transitions out of state $n$.
+
+The embedded discrete-time Markov chain has transition probabilities
+$$
+\widetilde{\boldsymbol{P}} =
+\begin{pmatrix}
+0 & 1 & 0 & 0 & \cdots \\
+\frac{q_{10}}{q_{10} + q_{12}} & 0 & \frac{q_{12}}{q_{10} + q_{12}} & 0 & \cdots \\
+0 & \frac{q_{21}}{q_{21} + q_{23}} & 0 & \frac{q_{23}}{q_{21} + q_{23}} & \cdots \\
+0 & 0 & \frac{q_{32}}{q_{32} + q_{34}} & 0 & \cdots \\
+\vdots & \vdots & \vdots & \vdots & \ddots
+\end{pmatrix}
+$$
+and the waiting time in state $n$ follows an exponential distribution with rate $q_{n,n-1} + q_{n,n-1}$.
+
+**Remark:** A Poisson process is a birth-death process where the death rate is zero, and where the birth rate is not dependent on the population size ($q_{01} = q_{12} = \dots = \lambda$). That is, the population can only increase through time, never decrease.
+
+::: {.callout-tip icon=false collapse="true"}
+## Example 4.7: linear birth-death process
+
+A seemingly reasonable assumption would be that the birth and death rates are both proportional to population size. This gives rise to the birth-death process with transition rates
+$$
+\begin{aligned}
+q_{n, n+1} = \lambda n \\
+q_{n, n-1} = \mu n
+\end{aligned}
+$$
+where $\lambda > 0$ and $\mu > 0$ are the per-individual birth and death rates, respectively. This model is called a linear birth-death model, because the rates are linear in the population size.\ -->
+<!-- How do we expect the population to evolve over time, under this model? When the population is $n$, the rate of increase is $\lambda n$ and the rate of decrease is $\mu n$, so we can think of the overall rate of population change as $(\lambda - \mu) n$. Using the Kolmogorov forward equations, we can show that the expected change is exponential under this model; the population increases exponentially if $\mu < \lambda$, and it decreases exponentially if $\lambda < \mu$. Note that zero is an absorbing state in this process: if the population size is zero, then it will remain there. @fig-linear-growth shows example realisations from linear birth-death processes with different values of the birth and death rates. -->
+<!-- ```{r fig-linear-growth, echo = FALSE, fig.align='center', fig.cap="Examples of linear birth-death process.",  fig.width = 8, fig.height = 2.5, out.width="100%"}
+library(ggplot2)
+theme_set(
+    theme_bw() + theme(strip.background = element_blank(), 
+                       panel.grid = element_blank()))
+set.seed(32)
+
+tmax <- 30
+l_all <- c(0.03, 0.1, 0.01)
+m_all <- c(0.01, 0.03, 0.1)
+
+ls <- lapply(1:length(l_all), function(i) {
+    lambda <- l_all[i]
+    mu <- m_all[i]
+    t <- 0
+    X <- 5
+    while(t[length(t)] < tmax) {
+        if(X[length(X)] > 0) {
+            wait1 <- rexp(1, rate = lambda * X[length(X)])
+            wait2 <- rexp(1, rate = mu * X[length(X)])
+            if(wait1 < wait2) {
+                X <- c(X, X[length(X)] + 1)
+                t <- c(t, t[length(t)] + wait1)
+            } else {
+                X <- c(X, X[length(X)] - 1)
+                t <- c(t, t[length(t)] + wait2)
+            }            
+        } else {
+            X <- c(X, 0)
+            t <- c(t, tmax)
+        }
+    }
+    
+    n <- length(X)
+    data.frame(x = t[-n], xend = t[-1], y = X[-n], yend = X[-n], 
+               i = i, lambda = lambda, mu = mu)
+})
+df <- do.call(rbind, ls)
+
+ggplot(df, aes(x, y)) +
+    geom_segment(aes(xend = xend, yend = yend)) +
+    facet_wrap("i", nrow = 1, #scales = "free_y",
+               labeller = label_bquote(lambda == .(l_all[i])~"and"~mu == .(m_all[i]))) +
+    coord_cartesian(xlim = c(0, tmax)) +
+    labs(x = "t", y = expression(X[t]), title = "Linear birth-death process")
+``` -->
+<!-- See Dobrow p298, or look up online? Proof of expected pop at time t? -->
+<!-- http://www.suaybarslan.com/birthdeathprocess4datamodelling.pdf -->
+<!-- ::: -->
+<!-- ### Martingales -->
+<!-- See Section 8.6 of the Dobrow book -->
+<!-- ::: {.callout-note icon=false} -->
+<!-- ## Definition 4.6 -->
+<!-- A stochastic process $(X_t)$ is a **martingale** if, for all $0 \leq s \leq t$, -->
+<!-- $$ -->
+<!--     E[X_t \mid \{ X_r, r \leq s\}] = X_s -->
+<!-- $$ -->
+<!-- ::: -->
+<!-- ### Queueing process
+
+The study of queues has many applications, such as customers at a store or a bank, patients in the emergency service of a hospital, or people waiting on hold on the phone. A common model, called the $M/M/k$ model (where the "$M$"s stand for "Markov" or "memoryless"), assumes that:
+
+1. there are $k$ servers (e.g., doctors at the ER, or tills at the store); 
+2. arrivals in the queue follow a Poisson process with rate $\lambda$;
+3. the serving time by each operator follows an exponential distribution with rate $\mu$.
+
+From this model, one can derive the expected number of people waiting in line in the long run (when it exists), or the expected waiting time spent in line, as functions of $k$, $\lambda$ and $\mu$. An ER service could for example use this to determine how many doctors they need to ensure that patients never have to wait longer than 3 hours before being treated. -->
+</section>
+<section id="continuous-state-space-brownian-motion" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="continuous-state-space-brownian-motion"><span class="header-section-number">4.6</span> Continuous state space: Brownian motion</h2>
+<p>Many well-studied continuous-time Markov processes are defined over an uncountable state space, e.g., <span class="math inline">\(\mathcal{S} = \mathbb{R}\)</span> or <span class="math inline">\(\mathcal{S} = [0, \infty)\)</span>. This formulation is useful in situations where the phenomenon of interest is continuous, such as the value of a stock price, or the position of a particle in space. An important class of continuous-time continuous-space Markov processes is diffusion processes, which have been widely used in fields such as physics, biology, and finance. Brownian motion is the building block of all diffusion processes, and we introduce it briefly in this section.</p>
+<p>The motivation for Brownian motion was the observation (by 19th century biologist Robert Brown) that particles of pollen in water follow erratic and seemingly random trajectories. This phenomenon is caused by collisions with water molecules, and it was first described mathematically in the early 20th century by Albert Einstein. The properties of the resulting process were further explored by Norbert Wiener, and Brownian motion is also called the Wiener process.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition 4.7
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A continuous-time stochastic process <span class="math inline">\((B_t)\)</span> is a <strong>standard Brownian motion</strong> if it satisfies the following properties.</p>
+<ol type="1">
+<li><p>For all <span class="math inline">\(s, t &gt; 0\)</span>, <span class="math inline">\(B_{s + t} - B_s\)</span> has a normal distribution with mean 0 and variance <span class="math inline">\(t\)</span>.</p></li>
+<li><p>For any <span class="math inline">\(0 \leq q &lt; r \leq s &lt; t\)</span>, the increments <span class="math inline">\(B_t - B_s\)</span> and <span class="math inline">\(B_r - B_q\)</span> are independent random variables.</p></li>
+<li><p>The function <span class="math inline">\(t \mapsto B_t\)</span> is continuous, with probability 1. (<em>Also sometimes stated as: the sample paths of <span class="math inline">\((B_t)\)</span> are continuous.</em>)</p></li>
+</ol>
+</div>
+</div>
+<p>The additional condition that <span class="math inline">\(B_0 = 0\)</span> is also sometimes included in the definition of Brownian motion. More generally, we can assume that <span class="math inline">\(B_0\)</span> is specified as part of the model formulation as an initial condition.</p>
+<p>The properties of Brownian motion suggest the following method to generate sample paths from the process over some time grid <span class="math inline">\(t_0, t_1, \dots, t_n\)</span>. We start from some intial condition <span class="math inline">\(B_{t_0} = b_0\)</span>, and, for <span class="math inline">\(i = 0, \dots, n - 1\)</span>,</p>
+<ol type="1">
+<li><p>generate a normally distributed increment <span class="math inline">\(\varepsilon_i \sim N(0, t_{i+1} - t_i)\)</span>;</p></li>
+<li><p>compute the next value of the process as <span class="math inline">\(B_{t_{i+1}} = B_{t_i} + \varepsilon_i\)</span>.</p></li>
+</ol>
+<p>This algorithm can for example be implemented in R using the random number generator <code>rnorm()</code>. This is very similar to the procedure used in Chapter 2 to simulate from a (discrete-time) Gaussian random walk, and Brownian motion can be viewed as the continuous-time analogue. Note that, here, we can sample the path over an arbitrarily fine time grid. <a href="#fig-bm" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-bm</span></a> shows three simulated realisations from a standard Brownian motion with initial condition <span class="math inline">\(B_0 = 0\)</span>, over <span class="math inline">\(t \in [0, 10]\)</span>. The three paths start from 0, and they spread more and more as they fluctuate randomly through time.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-bm" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_markov_continuous_files/figure-html/fig-bm-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.3: Example realisations from a standard Brownian motion process over the interval <span class="math inline">\(0 \leq t \leq 10\)</span>.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-30-contents" aria-controls="callout-30" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Example 4.8: Brown’s pollen
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-30" class="callout-30-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The motivation for developing the theory of Brownian motion was the movements of pollen in water. The definition of Brownian motion describes a one-dimensional process, so how can this be used for the movement of pollen in two dimensions? The simplest approach is to assume that the two coordinates follow two independent Brownian motions (this is called “isotropy”).<br>
+</p>
+<p><a href="#fig-bm-2d" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-bm-2d</span></a> shows a path simulated from a two-dimensional isotropic Brownian motion, perhaps resembling the pollen trajectories observed by Brown. A more sophisticated model could assume that the x and y coordinates are correlated, which could for example favour movement along a particular direction.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-bm-2d" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bm-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_markov_continuous_files/figure-html/fig-bm-2d-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bm-2d-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.4: Example realisation from a standard isotropic Brownian motion process in two dimensions. The initial position is shown as a red dot.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>One key feature of Brownian motion is its scaling property: no matter how much we “zoom in”, the process is still a Brownian motion.</p>
+<!-- From Korosteleva book, p 154 -->
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition 4.11
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Let <span class="math inline">\((B_t)\)</span> be a standard Brownian motion process with initial condition <span class="math inline">\(B_0 = 0\)</span>. For any <span class="math inline">\(a &gt; 0\)</span>, <span class="math inline">\(B_{at}\)</span> and <span class="math inline">\(\sqrt{a} B_t\)</span> have the same distribution.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-32-contents" aria-controls="callout-32" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-32" class="callout-32-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>By definition of Brownian motion, <span class="math inline">\(B_{at} \sim N(0, at)\)</span>. But, using the properties <span class="math inline">\(E[aX] = a E[X]\)</span> and <span class="math inline">\(Var[aX] = a^2 Var[X]\)</span>, we also have <span class="math display">\[
+\begin{aligned}
+B_t &amp; \sim N(0, t) \\
+\Rightarrow \sqrt{a}B_t &amp; \sim N(0, at).
+\end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<p>The rescaling property of Brownian motion is illustrated in <a href="#fig-bm-scales" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-bm-scales</span></a>. No matter how much we zoom into a Brownian motion path, the behaviour of the process is the same, in the sense that it has independent, normally distributed increments with variance proportional to the length of the time interval. Brownian motion can be viewed as part of the general mathematical family of fractals.</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-bm-scales" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-bm-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_markov_continuous_files/figure-html/fig-bm-scales-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-bm-scales-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4.5: Simulated Brownian motion path over three different time intervals. In the first two panels, the grey boxes show the zoomed area of the next panel.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>It turns out that the rescaling property of Brownian motion implies that its paths are nowhere differentiable, even if it is continuous everywhere. We will not prove this result, but it relies on the following intuition. The derivative of the process can be defined as <span class="math display">\[
+    \frac{d}{dt} B_t = \lim_{h \to 0} \frac{B_{t+h} - B_t}{h}.
+\]</span> By definition of Brownian motion, <span class="math inline">\(B_{t+h} - B_t\)</span> has a normal distribution with mean 0 and variance <span class="math inline">\(h\)</span>. So, <span class="math inline">\((B_{t+h} - B_t) / h\)</span> is also normally distributed with mean 0 and, using <span class="math inline">\(Var[aX] = a^2 Var[X]\)</span>, we have <span class="math display">\[
+    Var \left[ \frac{B_{t+h} - B_t}{h} \right] = \frac{1}{h^2} Var[B_{t+h} - B_t] = \frac{1}{h}.
+\]</span> As <span class="math inline">\(h \to 0\)</span>, the variance tends to <span class="math inline">\(\infty\)</span>. The normal distribution with infinite variance is not well defined, so the derivative does not exist.</p>
+</section>
+<section id="problems" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="problems"><span class="header-section-number">4.7</span> Problems</h2>
+<ol type="1">
+<li><p>I have been observing Hamlet, my parrot, and I have noticed that, over time, he engages in three types of behaviour: resting, feeding, and singing. In addition, I have made the following observations:</p>
+<ul>
+<li><p>the average time spent in each behaviour (before switching to another behaviour) is 2 hours for resting, 5 minutes for feeding, and 20 minutes for singing;</p></li>
+<li><p>when Hamlet is done resting, he is 4 times more likely to start feeding than singing;</p></li>
+<li><p>when he is done feeding, he always starts singing;</p></li>
+<li><p>when he is done singing, he is 2 times more likely to start resting than feeding.</p></li>
+</ul>
+<p>We assume that Hamlet’s behaviour can be described by a continuous-time Markov chain.</p>
+<ol type="a">
+<li><p>What is the distribution of holding times in each of the three behavioural states?</p></li>
+<li><p>What is the transition rate matrix of the continuous-time Markov chain?</p></li>
+<li><p>I check on Hamlet at 3pm and see that he is feeding. Given only this information, what is the distribution of the Markov chain at 3:30pm?</p></li>
+<li><p>Following from the previous question, let’s now say that, at 3:30pm, I also know that Hamlet is not currently singing (because I can’t hear him from the next room). Given this additional information, what is the distribution of the Markov chain at 3:30pm?</p></li>
+<li><p>What is the long-term proportion of time that Hamlet spends in each behavioural state?</p></li>
+</ol></li>
+<li><p>Let <span class="math inline">\((X_t)\)</span> be the continuous-time Markov chain with state space <span class="math inline">\(\{0, 1\}\)</span> and transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+     -2 &amp; 2 \\
+     3 &amp; -3
+\end{pmatrix}.
+\]</span> Note that <span class="math inline">\(\boldsymbol{Q} = \boldsymbol{VDV}^{-1}\)</span> where <span class="math display">\[
+\boldsymbol{V} =
+\begin{pmatrix}
+     1 &amp; 1 \\
+     -\frac{3}{2} &amp; 1
+\end{pmatrix}
+\quad\text{and}\quad
+\boldsymbol{D} =
+\begin{pmatrix}
+     -5 &amp; 0 \\
+     0 &amp; 0
+\end{pmatrix}.
+\]</span></p>
+<ol type="a">
+<li><p>Derive the transition probability matrix <span class="math inline">\(\boldsymbol{P}(t)\)</span> of the process, as a function of <span class="math inline">\(t\)</span>. <em>Hint: if <span class="math inline">\(\boldsymbol{M} = \boldsymbol{ABA}^{-1}\)</span> for some diagonal matrix <span class="math inline">\(\boldsymbol{B}\)</span>, then <span class="math inline">\(e^{\boldsymbol{M}} = \boldsymbol{A} e^{\boldsymbol{B}} \boldsymbol{A}^{-1}\)</span>. Also, a diagonal matrix can be exponentiated element-wise.</em></p></li>
+<li><p>Use the result from question (a) to compute the limiting distribution of the process.</p></li>
+<li><p>Compute <span class="math inline">\(\Pr(X_{0.6} = 1, X_{0.3} = 0 \mid X_{0.1} = 1)\)</span>.</p></li>
+<li><p>Assuming that <span class="math inline">\(X_0 = 1\)</span>, which state is the process most likely to be in at time <span class="math inline">\(t = 0.3\)</span>? What about at time <span class="math inline">\(t = 0.4\)</span>?</p></li>
+</ol></li>
+<li><p>Consider the continuous-time Markov chain <span class="math inline">\((X_t)\)</span> with state space <span class="math inline">\(\{0, 1, 2, 3\}\)</span> and transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+     -3 &amp; 3 &amp; 0 &amp; 0 \\
+     0.2 &amp; -0.6 &amp; 0.1 &amp; 0.3 \\
+     0.5 &amp; 0 &amp; -1.5 &amp; 1 \\
+     0 &amp; 0 &amp; 0.5 &amp; -0.5    
+\end{pmatrix}
+\]</span></p>
+<ol type="a">
+<li><p>What is the transition probability matrix of the embedded discrete-time Markov chain?</p></li>
+<li><p>Given that the process starts in state 0, what is the probability that it will be back in state 0 after 6 transitions?</p></li>
+<li><p>What is the limiting distribution of <span class="math inline">\((X_t)\)</span>? What is the limiting distribution of the embedded discrete-time Markov chain?</p></li>
+</ol></li>
+<li><p>We decide to model an individual’s health status with a continuous-time Markov chain with three states: “susceptible” (the person can become infected), “infected”, and “recovered” (the person is temporarily immune). Based on previous studies on the disease of interest, the estimated rate matrix (in transitions per month) is <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+     -1 &amp; 1 &amp; 0 \\
+     0 &amp; -2 &amp; 2 \\
+     0.2 &amp; 0 &amp; -0.2
+\end{pmatrix}.
+\]</span></p>
+<ol type="a">
+<li><p>Simulate a realisation from this process over a period of 30 months. Specifically, the output of the simulation should be a vector of values of the process, <span class="math inline">\(X_t\)</span>, over the following grid of times: <span class="math inline">\(t \in \{0, 0.05, 0.1, 0.15, 0.2, \dots, 29.9, 29.95, 30\}\)</span>.</p></li>
+<li><p>Repeat this simulation 1000 times, representing the health status of 1000 patients. Plot the number of infected patients (out of 1000) against time over the 30-month period.</p></li>
+</ol></li>
+<li><p>Let <span class="math inline">\((X_t)\)</span> be a continuous-time Markov chain with state space <span class="math inline">\(\{ 1, 2, 3 \}\)</span> and transition rate matrix <span class="math display">\[
+\boldsymbol{Q} =
+\begin{pmatrix}
+     -2 &amp; 0.5 &amp; 1.5 \\
+     1 &amp; -1 &amp; 0 \\
+     0.5 &amp; 0.5 &amp; -1
+\end{pmatrix}
+\]</span></p>
+<ol type="a">
+<li><p>What is the direction of change of the functions <span class="math inline">\(P_{12}(t)\)</span> and <span class="math inline">\(P_{13}(t)\)</span> at <span class="math inline">\(t = 0\)</span> (i.e., are they increasing or decreasing)?</p></li>
+<li><p>Which of these two functions has the largest slope (in absolute value) at <span class="math inline">\(t = 0\)</span>?</p></li>
+</ol></li>
+</ol>
+</section>
+<section id="appendix-some-proofs" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="appendix-some-proofs">Appendix: some proofs</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proposition
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>If <span class="math inline">\(X_1 \sim \text{Exp}(q_1), \dots, X_n \sim \text{Exp}(q_n)\)</span> are independent random variables, and <span class="math inline">\(M = \text{min} \{ X_1, \dots, X_n \}\)</span>, then</p>
+<ol type="1">
+<li><p><span class="math inline">\(M \sim \text{Exp}(q_1 + \dots + q_n)\)</span></p></li>
+<li><p><span class="math inline">\(\displaystyle \Pr(M = X_k) = \frac{q_k}{\sum_{j=1}^n q_k}\)</span></p></li>
+</ol>
+</div>
+</div>
+<!-- From Dobrow p 231 -->
+<div class="callout callout-style-default callout-important no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-34-contents" aria-controls="callout-34" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Proof
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-34" class="callout-34-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>Using independence of <span class="math inline">\(X_1, \dots, X_n\)</span>, we have <span class="math display">\[
+\begin{aligned}
+     \Pr(M &gt; t) &amp; = \Pr(X_1 &gt; t, \dots, X_n &gt; t) \\
+         &amp; = \Pr(X_1 &gt; t) \dots \Pr(X_n &gt; t) \\
+         &amp; = \exp(-q_1 t) \dots \exp(- q_n t) \\
+         &amp; = \exp(-(q_1 + \dots + q_n) t)        
+\end{aligned}
+\]</span> for <span class="math inline">\(t &gt; 0\)</span>, which is the cdf of an exponential distribution with rate <span class="math inline">\(q_1 + q_n\)</span>.</p></li>
+<li><p>We use the law of total probability to condition on <span class="math inline">\(X_k\)</span>, <span class="math display">\[
+\begin{aligned}
+     \Pr(M = X_k) &amp; = \Pr(X_1 \geq X_k, X_n \geq X_k) \\
+         &amp; = \int_{0}^\infty \Pr(X_1 \geq t, \dots, X_n \geq t \mid X_k = t)\ f_{X_k}(t)\ dt \\
+         &amp; = \int_{0}^\infty \Pr(X_1 \geq t, \dots, X_n \geq t \mid X_k = t)\ q_k \exp(-q_k t)\ dt \\
+         &amp; = \int_{0}^\infty \Pr(X_1 \geq t, \dots, X_{k-1} \geq t, X_{k+1} \geq t, \dots, X_n \geq t)\ q_k \exp(-q_k t)\ dt \\
+         &amp; = \int_{0}^\infty \Pr(X_1 \geq t) \dots \Pr(X_{k-1} \geq t), \Pr(X_{k+1} \geq t) \dots \Pr(X_n \geq t)\ q_k \exp(-q_k t)\ dt \\
+         &amp; = q_k \int_{0}^\infty \exp(-(q_1 + \dots + q_n) t)\ dt \\
+         &amp; = \frac{q_k}{\sum_{j=1}^n q_k}
+\end{aligned}
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-ross2019" class="csl-entry" role="listitem">
+Ross, Sheldon M. 2019. <em>Introduction to Probability Models, 12th Edition</em>. Academic Press.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./03_poisson.html" class="pagination-link" aria-label="Poisson processes">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Poisson processes</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./05_HMM.html" class="pagination-link" aria-label="Hidden Markov models">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Hidden Markov models</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
