@@ -7,9 +7,9 @@ author_profile: true
 
 ## Courses taught at Dalhousie University
 
-- STAT 3450: Statistical Learning with R (Winter 2024)
-- STAT/MATH 3460: Intermediate Statistical Theory (Winter 2024) 
-- STAT 4370/5370: Stochastic Processes (Fall 2023)
+- STAT 3450: Statistical Learning with R (2024, 2025)
+- STAT/MATH 3460: Intermediate Statistical Theory (2024, 2025) 
+- STAT 4370/5370: Stochastic Processes (2023, 2024)
   - [Course notes](https://theomichelot.github.io/files/Stochastic-Processes.pdf)
 - STAT 1060: Introductory Statistics for Science and Health Sciences (Winter 2023)
 

@@ -7,12 +7,17 @@ author_profile: true
 
 ## Peer-reviewed papers
 
+Klappstein, N.J., Michelot, T., Fieberg, J., Pedersen, E.J., & Mills Flemming, J. (2024).\\
+["Step selection functions with non‐linear and random effects"](https://doi.org/10.1111/2041-210X.14367)\\
+_Methods in Ecology and Evolution_, 15(8), pp. 1332-1346.
+[Get a copy](https://theomichelot.github.io/files/2024_Klappstein_MEE.pdf)
+
 Invernizzi, E., **Michelot, T.**, Popov, V., Ng, N., Macqueen, E., Rouviere, A., ... & Sasaki, T. (2024).\\
-[Identifying cues for self-organized nest wall-building behaviour in the rock ant, Temnothorax rugatulus, using hidden Markov models](https://doi.org/10.1016/j.anbehav.2024.01.008) \\
-Animal Behaviour, 210, pp. 315-330.\\
+["Identifying cues for self-organized nest wall-building behaviour in the rock ant, Temnothorax rugatulus, using hidden Markov models"](https://doi.org/10.1016/j.anbehav.2024.01.008) \\
+_Animal Behaviour_, 210, pp. 315-330.\\
 [Get a copy](https://theomichelot.github.io/files/2024_Invernizzi_AnimalBehaviour.pdf)
 
-**Michelot, T.**, Klappstein, N. J., Potts, J. R., & Fieberg, J. (2024).\\ 
+**Michelot, T.**, Klappstein, N. J., Potts, J. R., & Fieberg, J. (2024).\\
 ["Understanding step selection analysis through numerical integration"](https://doi.org/10.1111/2041-210X.14248)\\
 _Methods in Ecology and Evolution_, 15(1), pp. 24-35.\\
 [Get a copy](https://theomichelot.github.io/files/2024_Michelot_MEE.pdf)
@@ -124,11 +129,13 @@ _Computational Statistics_, 30, pp. 517-537.\\
 
 ## Preprints
 
+**Michelot, T.** (2024)\\
+["Multiscale modelling of animal movement with persistent dynamics"](https://arxiv.org/abs/2406.15195)\\
+_arXiv preprint_, arXiv:2406.15195.
+
 **Michelot, T.** (2022)\\
 ["hmmTMB: Hidden Markov models with flexible covariate effects in R'](https://arxiv.org/abs/2211.14139)\\
 _arXiv preprint_, arXiv:2211.14139.
-
-
 
 ## Book chapters
 
