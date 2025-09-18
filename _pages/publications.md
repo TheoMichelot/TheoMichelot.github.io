@@ -7,9 +7,18 @@ author_profile: true
 
 ## Peer-reviewed papers
 
-Klappstein, N.J., Michelot, T., Fieberg, J., Pedersen, E.J., & Mills Flemming, J. (2024).\\
+Santos Neto, C., Dwyer, R., **Michelot, T.**, Cristescu, R. (in press).\\
+"Effects of urbanisation on the movements of an arboreal specialist using hidden Markov models"\\
+Movement Ecology.
+
+**Michelot, T.** (2025).\\
+["hmmTMB: hidden Markov models with flexible covariate effects in R"](https://doi.org/10.18637/jss.v114.i05)\\
+_Journal of Statistical Software_, 114(5), pp. 1-45.\\
+[Get a copy](https://theomichelot.github.io/files/2025_Michelot_JSS.pdf)
+
+Klappstein, N.J., **Michelot, T.**, Fieberg, J., Pedersen, E.J., & Mills Flemming, J. (2024).\\
 ["Step selection functions with non‐linear and random effects"](https://doi.org/10.1111/2041-210X.14367)\\
-_Methods in Ecology and Evolution_, 15(8), pp. 1332-1346.
+_Methods in Ecology and Evolution_, 15(8), pp. 1332-1346.\\
 [Get a copy](https://theomichelot.github.io/files/2024_Klappstein_MEE.pdf)
 
 Invernizzi, E., **Michelot, T.**, Popov, V., Ng, N., Macqueen, E., Rouviere, A., ... & Sasaki, T. (2024).\\
@@ -133,9 +142,9 @@ _Computational Statistics_, 30, pp. 517-537.\\
 ["Multiscale modelling of animal movement with persistent dynamics"](https://arxiv.org/abs/2406.15195)\\
 _arXiv preprint_, arXiv:2406.15195.
 
-**Michelot, T.** (2022)\\
-["hmmTMB: Hidden Markov models with flexible covariate effects in R'](https://arxiv.org/abs/2211.14139)\\
-_arXiv preprint_, arXiv:2211.14139.
+Leos-Barajas, V., **Michelot, T.** (2018)\\
+["An introduction to animal movement modeling with hidden Markov models using Stan for Bayesian inference"](https://arxiv.org/abs/1806.10639)\\
+_arXiv preprint_, arXiv:1806.10639.
 
 ## Book chapters
 
